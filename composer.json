@@ -1,0 +1,21 @@
+{
+  "name": "auth3/auth3",
+  "description": "Slim 3 Authentication site",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Michael Meyer",
+      "email": "Michael@forstweb.co.za"
+    }
+  ],
+  "require": {
+    "slim/slim": "^3.0",
+    "slim/twig-view": "^2.1"
+  },
+  "autoload":{
+    "psr-4":{
+      "App\\": "app"
+    }
+  }
+}
