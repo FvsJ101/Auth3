@@ -1,6 +1,5 @@
 <?php
 return array(
-
     'app' => array(
         'url'  => 'http://localhost',
         'hash' => array(
@@ -12,7 +11,7 @@ return array(
     'db' => array(
         'driver'    => 'mysql',
         'host'      => '127.0.0.1',
-        'name'      => 'auth',
+        'name'      => 'application',
         'username'  => 'root',
         'password'  => '',
         'charset'   => 'utf8',
