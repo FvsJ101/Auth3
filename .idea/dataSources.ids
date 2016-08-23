@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - application@localhost" uuid="0c337195-5570-43a3-848d-bda4944ad22c">
+    <database-info product="MySQL" version="5.7.9-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+      <schema id="1" name="application">
+        <visible>1</visible>
+      </schema>
+      <schema id="2" name="app"/>
+      <schema id="3" name="cito_clms"/>
+      <schema id="4" name="cito_edms"/>
+      <schema id="5" name="cito_lems"/>
+      <schema id="6" name="cito_qams"/>
+      <schema id="7" name="cito_rnms"/>
+      <schema id="8" name="cito_sams"/>
+      <schema id="9" name="cito_saqa"/>
+      <schema id="10" name="cito_twms"/>
+      <schema id="11" name="cito_wcms"/>
+      <schema id="12" name="destruct"/>
+      <schema id="13" name="dev1_clms"/>
+      <schema id="14" name="dev1_dcms"/>
+      <schema id="15" name="dev1_edms"/>
+      <schema id="16" name="dev1_lems"/>
+      <schema id="17" name="dev1_qams"/>
+      <schema id="18" name="dev1_rnms"/>
+      <schema id="19" name="dev1_sams"/>
+      <schema id="20" name="dev1_saqa"/>
+      <schema id="21" name="dev1_twms"/>
+      <schema id="22" name="dev1_wcms"/>
+      <schema id="23" name="information_schema"/>
+      <schema id="24" name="joomla"/>
+      <schema id="25" name="mysql"/>
+      <schema id="26" name="performance_schema"/>
+      <schema id="27" name="sandbox"/>
+      <schema id="28" name="sys"/>
+      <table id="29" parent="1" name="user"/>
+      <column id="30" parent="29" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)|0</data-type>
+      </column>
+      <column id="31" parent="29" name="username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)|0</data-type>
+      </column>
+      <column id="32" parent="29" name="first_name">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="33" parent="29" name="last_name">
+        <data-type>varchar(50)|0</data-type>
+      </column>
+      <column id="34" parent="29" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(40)|0</data-type>
+      </column>
+      <column id="35" parent="29" name="password">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="36" parent="29" name="active">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="37" parent="29" name="active_hash">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="38" parent="29" name="recover_hash">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="39" parent="29" name="remember_identifier">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="40" parent="29" name="remember_token">
+        <data-type>varchar(255)|0</data-type>
+      </column>
+      <column id="41" parent="29" name="created_at">
+        <mandatory>1</mandatory>
+        <data-type>timestamp|0</data-type>
+        <default-expression>CURRENT_TIMESTAMP</default-expression>
+      </column>
+      <column id="42" parent="29" name="updated_at">
+        <data-type>timestamp|0</data-type>
+      </column>
+      <column id="43" parent="29" name="flag_delete">
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+      <column id="44" parent="29" name="flag_expire">
+        <data-type>tinyint(1)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
+      </column>
+    </database-model>
+  </data-source>
+</component>

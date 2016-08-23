@@ -23,10 +23,10 @@ $container = $app->getContainer();
 
 $container['view'] = function ($container){
     $view = new \Slim\Views\Twig(
-        __DIR__.'/../resources/views',
-        array(
-            'cache' => false,
-        )
+                             __DIR__.'/../resources/views',
+                            array(
+                                'cache' => false,
+                            )
     );
 
     $view->addExtension(new \Slim\Views\TwigExtension(
@@ -52,7 +52,7 @@ TO GET ITEMS OUT OF THE CONFIG FILE
 */
 
 
-
+//HOME CONTROLLER FOR HOME PAGE
 $container['HomeController'] = function ($container) {
     return new \App\Controllers\HomeController($container);
 };
