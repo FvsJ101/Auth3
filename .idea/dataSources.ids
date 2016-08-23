@@ -60,7 +60,7 @@
         <mandatory>1</mandatory>
         <data-type>varchar(255)|0</data-type>
       </column>
-      <column id="36" parent="29" name="active">
+      <column id="36" parent="29" name="activate">
         <mandatory>1</mandatory>
         <data-type>tinyint(1)|0</data-type>
         <default-expression>&apos;0&apos;</default-expression>
@@ -85,11 +85,11 @@
       <column id="42" parent="29" name="updated_at">
         <data-type>timestamp|0</data-type>
       </column>
-      <column id="43" parent="29" name="flag_delete">
+      <column id="43" parent="29" name="flag_expire">
         <data-type>tinyint(1)|0</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="44" parent="29" name="flag_expire">
+      <column id="44" parent="29" name="flag_delete">
         <data-type>tinyint(1)|0</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>

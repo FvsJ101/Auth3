@@ -11,9 +11,9 @@ return array(
     'db' => array(
         'driver'    => 'mysql',
         'host'      => '127.0.0.1',
-        'name'      => 'application',
-        'username'  => 'dev1_user',
-        'password'  => 'pass10Word',
+        'database'  => 'application',
+        'username'  => 'michael',
+        'password'  => '',
         'charset'   => 'utf8',
         'collation' => 'utf8_general_ci',
         'prefix'    => ''
