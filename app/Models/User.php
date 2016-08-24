@@ -16,7 +16,7 @@ class User extends Model
         'last_name',
         'email',
         'password',
-        'active',
+        'flag_active',
         'recover_hash',
         'active_hash',
         'remember_identifier',
