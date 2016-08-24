@@ -21,6 +21,22 @@ $app = new \Slim\App(array(
 //Need to get the slim container and add the twig view to it.
 $container = $app->getContainer();
 
+//TO RETRIEVE SETTINGS FORM CONTAINER
+//$container->get('settings')['mode'];
+
+//SETTING CONFIG OPTIONS TO CONTAINER
+$container['Config'] = function ($container){
+    $Config = new Config(INC_ROOT."/app/config/".$container->get('settings')['mode'].".php");
+    return $Config;
+};
+
+/*
+TO GET ITEMS OUT OF THE CONFIG FILE
+//$Config = $container['Config'];
+//echo $Config->get('app.url');
+*/
+
+//SETTING VIEW PARAMS TO CONTAINER
 $container['view'] = function ($container){
     $view = new \Slim\Views\Twig(
                              __DIR__.'/../resources/views',
@@ -37,19 +53,7 @@ $container['view'] = function ($container){
     return $view;
 };
 
-//TO RETRIEVE SETTINGS FORM CONTAINER
-//$container->get('settings')['mode'];
 
-$container['Config'] = function ($container){
-    $Config = new Config(INC_ROOT."/app/config/".$container->get('settings')['mode'].".php");
-    return $Config;
-};
-
-/*
-TO GET ITEMS OUT OF THE CONFIG FILE
-//$Config = $container['Config'];
-//echo $Config->get('app.url');
-*/
 
 //DATABASE SETUP
 require INC_ROOT."/app/db/database.php";
