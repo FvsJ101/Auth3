@@ -10,13 +10,14 @@ return array(
 
     'db' => array(
         'driver'    => 'mysql',
-        'host'      => '127.0.0.1',
+        'host'      => 'localhost',
         'database'  => 'application',
         'username'  => 'michael',
-        'password'  => '',
+        'password'  => 'test',
         'charset'   => 'utf8',
         'collation' => 'utf8_general_ci',
-        'prefix'    => ''
+        'prefix'    => '',
+        'port'      => 33066
     ),
 
     'auth' => array(

@@ -53,10 +53,11 @@ TO GET ITEMS OUT OF THE CONFIG FILE
 
 //DATABASE SETUP
 require INC_ROOT."/app/db/database.php";
-
 $container['db'] = function ($container) use ($capsule){
     return $capsule;
 };
+
+
 
 //HOME CONTROLLER FOR HOME PAGE
 $container['HomeController'] = function ($container) {
