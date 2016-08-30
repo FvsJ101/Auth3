@@ -65,7 +65,13 @@ $container['db'] = function ($container) use ($capsule){
 
 //HOME CONTROLLER FOR HOME PAGE
 $container['HomeController'] = function ($container) {
-    return new \App\Controllers\HomeController($container);
+    return new App\Controllers\HomeController($container);
+};
+
+
+//AUTH CONTROLLER FOR SIGNUP PAGE
+$container['AuthController'] = function ($container) {
+    return new App\Controllers\Auth\AuthController($container);
 };
 
 

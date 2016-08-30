@@ -4,3 +4,7 @@
 $app->get('/', 'HomeController:index' );
 
 
+//AuthController
+$app->get('/auth/signup','AuthController:getSignUp')->setName('auth.signup');
+//ON SUBMISSION
+$app->post('/auth/signup','AuthController:postSignUp');

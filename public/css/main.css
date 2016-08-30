@@ -3,34 +3,9 @@
    Custom styles
    ========================================================================== */
 /*====================== This is to get a sticky footer code ==============*/
-html, body {
-	height: 100%;
-	margin: 0;
-
+body{
+ margin-top: 80px !important;
 }
-
-
-body {
-	padding-top: 50px;
-
-}
-footer {
-	background-color: #c3c3c3;
-}
-.wrapper{
-	min-height: 100%;
-	margin-bottom: -60px;
-}
-.wrapper:after{
-	content: "";
-	display: block;
-}
-
-.wrapper:after, footer{
-	height: 60px;
-}
-
-/* ============================================================================*/
 
 header.carousel .fill {
 	width: 100%;
@@ -41,4 +16,8 @@ header.carousel .fill {
 
 .img-portfolio {
 	margin-bottom: 30px;
+}
+
+.carousel-inner{
+ margin-top: -30px;
 }
