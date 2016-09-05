@@ -6,6 +6,7 @@ namespace App\Controllers\Auth;
 
 use App\Controllers\Controller;
 use App\Models\User;
+use Respect\Validation\Validator AS v;
 
 class AuthController extends Controller
 {
@@ -18,6 +19,24 @@ class AuthController extends Controller
     //WHATS GOING TO HAPPEN WHEN WE SUBMIT THE FORM (POST SIGN UP)
     public function postSignUp($request, $response)
     {
+    
+        //PARAMS NEEDED $REQUST FROM SLIM AND THE ARRAY OF RULES
+        $validation = $this->validator->validate($request,array(
+            'username'   => v::notEmpty()->noWhitespace(),
+            'first_name' => v::alpha(),
+            'last_name'  => v::alpha(),
+            'email'      => v::email()->noWhitespace()->notEmpty(),
+            'password'   => v::noWhitespace()->notEmpty()
+                
+        ));
+    
+    
+        if($validation->failed()){
+    
+            return $response->withRedirect($this->router->pathFor('auth.signup'));
+        
+        }
+    
     
         //CREATES A USER
         $user = User::create(array(

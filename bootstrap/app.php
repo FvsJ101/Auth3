@@ -1,6 +1,7 @@
 <?php
 
 use  Noodlehaus\Config AS Config;
+use  App\Validation\Validator As Validator;
 
 session_start();
 
@@ -53,16 +54,21 @@ $container['view'] = function ($container){
     return $view;
 };
 
-
-
 //DATABASE SETUP
 require INC_ROOT."/app/db/database.php";
 $container['db'] = function ($container) use ($capsule){
     return $capsule;
 };
 
+//VALIDATOR
+$container['validator'] = function ($container) {
+
+    return new Validator();
+
+};
 
 
+/*////////////////////////ROUTES SECTION////////////////////////////////*/
 //HOME CONTROLLER FOR HOME PAGE
 $container['HomeController'] = function ($container) {
     return new App\Controllers\HomeController($container);
