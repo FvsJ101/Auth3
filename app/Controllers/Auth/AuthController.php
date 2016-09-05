@@ -17,16 +17,23 @@ class AuthController extends Controller
     }
     
     //WHATS GOING TO HAPPEN WHEN WE SUBMIT THE FORM (POST SIGN UP)
+    /**
+     * @param $request
+     * @param $response
+     * @return mixed
+     */
     public function postSignUp($request, $response)
     {
-    
+        
         //PARAMS NEEDED $REQUST FROM SLIM AND THE ARRAY OF RULES
         $validation = $this->validator->validate($request,array(
-            'username'   => v::notEmpty()->noWhitespace(),
-            'first_name' => v::alpha(),
-            'last_name'  => v::alpha(),
-            'email'      => v::email()->noWhitespace()->notEmpty(),
-            'password'   => v::noWhitespace()->notEmpty()
+            //KEY IS DEPENDED ON THE NAME VALUES FROM THE FORM
+            'username'           => v::notEmpty()->noWhitespace()->alnum(),
+            'first_name'         => v::alpha(),
+            'surname'            => v::alpha(),
+            'email'              => v::email()->noWhitespace()->notEmpty(),
+            'password'           => v::noWhitespace()->notEmpty()->min(6),
+            'confirmed_password' => v::equals($request->getParam('password'))->notEmpty()
                 
         ));
     
