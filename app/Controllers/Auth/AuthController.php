@@ -28,11 +28,11 @@ class AuthController extends Controller
         //PARAMS NEEDED $REQUST FROM SLIM AND THE ARRAY OF RULES
         $validation = $this->validator->validate($request,array(
             //KEY IS DEPENDED ON THE NAME VALUES FROM THE FORM
-            'username'           => v::notEmpty()->noWhitespace()->alnum(),
             'first_name'         => v::alpha(),
             'surname'            => v::alpha(),
             'email'              => v::email()->noWhitespace()->notEmpty(),
-            'password'           => v::noWhitespace()->notEmpty()->min(6),
+            'username'           => v::notEmpty()->noWhitespace()->alnum(),
+            'password'           => v::noWhitespace()->notEmpty()->stringType()->length(6, NULL),
             'confirmed_password' => v::equals($request->getParam('password'))->notEmpty()
                 
         ));

@@ -14,6 +14,7 @@ class Validator
     public function validate ($request, array $rules)
     {
     
+    
         foreach($rules as $field=> $rule){
     
             try{
@@ -21,8 +22,10 @@ class Validator
             }catch(NestedValidationException $e){
                 $this->errors[$field] = $e->getMessages();
             }
-        
         }
+        
+        //TAKE THE ERRORS AND THEN SAVE IT IN A SESSION WHERE WE CAN GET IT IN THE MIDDLEWARE VALIDATIONERRORSMIDDLEWARE
+        $_SESSION['signupErrors'] = $this->errors;
         
         return $this;
       

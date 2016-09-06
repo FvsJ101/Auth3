@@ -1,7 +1,8 @@
 <?php
 
 use  Noodlehaus\Config AS Config;
-use  App\Validation\Validator As Validator;
+use  App\Validation\Validator AS Validator;
+use  App\Middleware\ValidationErrorsMiddleware AS ValidationErrors;
 
 session_start();
 
@@ -66,6 +67,9 @@ $container['validator'] = function ($container) {
     return new Validator();
 
 };
+
+//ADDING MIDDLEWARE TO THE APPLICATION
+$app->add(new ValidationErrors($container));
 
 
 /*////////////////////////ROUTES SECTION////////////////////////////////*/
