@@ -6,6 +6,7 @@ namespace App\Controllers\Auth;
 
 use App\Controllers\Controller;
 use App\Models\User;
+use App\Middleware\BreadCrumbs AS BREAD;
 use Respect\Validation\Validator AS v;
 
 class AuthController extends Controller

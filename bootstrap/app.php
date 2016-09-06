@@ -3,8 +3,10 @@
 use  Noodlehaus\Config AS Config;
 use  App\Validation\Validator AS Validator;
 use  App\Middleware\ValidationErrorsMiddleware AS ValidationErrors;
+use  App\Middleware\BreadCrumbs AS BreadCrumbs;
 
 session_start();
+$_SESSION['breadCrumbs'];
 
 //C:\bla\Auth3
 define('INC_ROOT', dirname(__DIR__));
@@ -14,9 +16,11 @@ require __DIR__ . '/../vendor/autoload.php';
 $app = new \Slim\App(array(
     'settings' => array(
         'displayErrorDetails' => true,
+        'determineRouteBeforeAppMiddleware' => true,
         'mode'=>file_get_contents(INC_ROOT.'/mode.php')
     )
 ));
+
 
 
 
