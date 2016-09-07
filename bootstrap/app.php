@@ -8,9 +8,9 @@ use Respect\Validation\Validator AS v;
 use Slim\Csrf\Guard AS Guard;
 use App\Middleware\CsrfViewMiddleware AS Csrf;
 use App\Auth\Auth AS Auth;
+use App\Middleware\UserAuthMiddleware AS UserAuthMiddleware;
 
 session_start();
-$_SESSION['breadCrumbs'];
 
 //C:\bla\Auth3
 define('INC_ROOT', dirname(__DIR__));
@@ -95,7 +95,8 @@ $app->add(new Csrf($container));
 //TURN ON THE CSRF
 $app->add($container->csrf);
 
-
+//CUSTOM MIDDLEWARE FOR THE USER AUTHENTICATED
+$app->add(new UserAuthMiddleware($container));
 
 
 /*///////////ALLOW THE VALIDATION LIBRARY TO USE CUSTOM RULES/////////////////*/
