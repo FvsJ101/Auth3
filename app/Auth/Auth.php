@@ -45,5 +45,12 @@ class Auth
 	
 	}
 	
+	public function logout()
+    {
+    
+        unset($_SESSION['user']);
+        unset($_SESSION['auth']);
+    
+    }
 	
 }

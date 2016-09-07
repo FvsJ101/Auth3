@@ -13,3 +13,7 @@ $app->post('/auth/signup','AuthController:postSignUp');
 $app->get('/auth/signin','AuthController:getSignIn')->setName('auth.signin');
 //ON SUBMISSION
 $app->post('/auth/signin','AuthController:postSignIn');
+
+
+//AUTHCONTROLLER SIGNING THE USER OUT
+$app->get('/auth/logout','AuthController:getLogout')->setName('auth.logout');

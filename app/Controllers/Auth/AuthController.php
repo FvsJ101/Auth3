@@ -80,10 +80,26 @@ class AuthController extends Controller
             'password'   => password_hash($request->getParam('password'),PASSWORD_DEFAULT)
         ));
         
+        
+        //TODO add the mail to activate the user
+        //TODO add the page that will receive the user and check mail link activate user
+        
+        
+        
         //REDIRECT TO HOME
         //this->router WE ACCRESS THE CONTAINER PASSED IN THE APP SECTION "home" is the setName GIVEN IN ROUTES FILE
         return $response->withRedirect($this->router->pathFor('home'));
         
+    }
+    
+    
+    //SIGNS THE USER OUT
+    public function getLogout($request, $response)
+    {
+    
+        $this->auth->logout();
+        return $response->withRedirect($this->router->pathFor('home'));
+    
     }
     
 }
