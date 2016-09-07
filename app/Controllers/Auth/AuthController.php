@@ -9,16 +9,36 @@ use Respect\Validation\Validator AS v;
 
 class AuthController extends Controller
 {
-    //RENDER SIGNUP>TWIG VIEW
-    public function getSignUp($request, $response)
-    {
-        return $this->view->render($response,'auth/signup.twig');
-    }
     
     //RENDER SIGNIP>TWIG VIEW
     public function getSignIn($request, $response)
     {
         return $this->view->render($response,'auth/signin.twig');
+    }
+    
+    //WHATS GOING TO HAPPEN WHEN WE SUBMIT THE FORM (POST SIGN IN)
+    public function postSignIn($request, $response)
+    {
+        
+        $auth = $this->auth->attempt(
+            $request->getParam('username_email'),
+            $request->getParam('password')
+        
+        );
+        
+        if(!$auth){
+            return $response->withRedirect($this->router->pathFor('auth.signin'));
+        }
+    
+        //SUCCESS LOGIN
+        return $response->withRedirect($this->router->pathFor('home'));
+        
+    }
+    
+    //RENDER SIGNUP>TWIG VIEW
+    public function getSignUp($request, $response)
+    {
+        return $this->view->render($response,'auth/signup.twig');
     }
     
     //WHATS GOING TO HAPPEN WHEN WE SUBMIT THE FORM (POST SIGN UP)
@@ -64,12 +84,6 @@ class AuthController extends Controller
         //this->router WE ACCRESS THE CONTAINER PASSED IN THE APP SECTION "home" is the setName GIVEN IN ROUTES FILE
         return $response->withRedirect($this->router->pathFor('home'));
         
-    }
-    
-    //WHATS GOING TO HAPPEN WHEN WE SUBMIT THE FORM (POST SIGN IN)
-    public function postSignIn($request, $response)
-    {
-        return $response->withRedirect($this->router->pathFor('home'));
     }
     
 }

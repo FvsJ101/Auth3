@@ -6,7 +6,8 @@ use App\Middleware\ValidationErrorsMiddleware AS ValidationErrors;
 use App\Middleware\OldInputMiddleware AS OldInPut;
 use Respect\Validation\Validator AS v;
 use Slim\Csrf\Guard AS Guard;
-use App\Middleware\CsrfViewMiddleware As Csrf;
+use App\Middleware\CsrfViewMiddleware AS Csrf;
+use App\Auth\Auth AS Auth;
 
 session_start();
 $_SESSION['breadCrumbs'];
@@ -73,6 +74,12 @@ $container['validator'] = function ($container) {
 //SLIM CSRF PROTECTION
 $container['csrf'] = function ($container){
     return new Guard();
+};
+
+//AUTH CLASS USED FOR CHECKING USER AUTHENTICATION IE REGISTERED, SINGED IN, PERMISSION, REMEMBER
+$container['auth'] = function ($container){
+    return new Auth();
+
 };
 
 //ADDING MIDDLEWARE TO THE APPLICATION
