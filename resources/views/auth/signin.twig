@@ -1,0 +1,31 @@
+{% extends "/templates/default_no_banner.twig" %}
+
+{#TO VIEW INFO PASSED TO THE VIEW#}
+{#{{ signupErrors | json_encode }}#}
+
+{% block content %}
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Sign In</div>
+				<div class="panel-body">
+					{#{{ signupErrors | json_encode }}#}
+					<form action="{{ path_for('auth.signin') }}" method="post" name="signup-form">
+						<div class="form-group{{ signupErrors.first_name ? ' has-error' : '' }}">
+							<label for="username_email">Username Or Email</label>
+							<input type="text" name="username_email" id="username_email" placeholder="Username / Email" class="form-control">
+						</div>
+						<div class="form-group{{ signupErrors.password ? ' has-error' : '' }}">
+							<label for="password">Password</label>
+							<input type="password" name="password" id="password" placeholder="Password" class="form-control">
+						</div>
+						<button type="submit" class="btn btn-primary">Sign In</button>
+						
+						{#SET THIS UP IN THE CSRFVIEWMIDDLEWARE SECTION FOR THE KEY#}
+						{{ csrf.field | raw }}
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
