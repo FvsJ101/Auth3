@@ -31,7 +31,7 @@ class AuthController extends Controller
             //KEY IS DEPENDED ON THE NAME VALUES FROM THE FORM
             'first_name'         => v::alpha(),
             'surname'            => v::alpha(),
-            'email'              => v::email()->noWhitespace()->notEmpty(),
+            'email'              => v::email()->noWhitespace()->notEmpty()->EmailAvailable(),
             'username'           => v::notEmpty()->noWhitespace()->alnum(),
             'password'           => v::noWhitespace()->notEmpty()->stringType()->length(6, NULL),
             'confirmed_password' => v::equals($request->getParam('password'))->notEmpty()

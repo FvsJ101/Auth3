@@ -4,6 +4,7 @@ use  Noodlehaus\Config AS Config;
 use  App\Validation\Validator AS Validator;
 use  App\Middleware\ValidationErrorsMiddleware AS ValidationErrors;
 use  App\Middleware\OldInputMiddleware AS OldInPut;
+use Respect\Validation\Validator AS v;
 
 session_start();
 $_SESSION['breadCrumbs'];
@@ -75,6 +76,11 @@ $app->add(new ValidationErrors($container));
 //PASSES THE OLD FROM DATA BACK TO THE FORM FOR SIGNUP / REGISTER PAGE
 $app->add(new OldInPut($container));
 
+
+
+/*///////////ALLOW THE VALIDATION LIBRARY TO USE CUSTOM RULES/////////////////*/
+
+v::with('App\\Validation\\Rules\\');
 
 /*////////////////////////ROUTES SECTION////////////////////////////////*/
 //HOME CONTROLLER FOR HOME PAGE
