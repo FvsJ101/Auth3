@@ -13,28 +13,28 @@
 					<form action="{{ path_for('auth.signup') }}" method="post" name="signup-form">
 						<div class="form-group{{ signupErrors.first_name ? ' has-error' : '' }}">
 							<label for="first_name">Name</label>
-							<input type="text" name="first_name" id="first_name" placeholder="Name" class="form-control">
+							<input type="text" name="first_name" id="first_name" placeholder="Name" class="form-control" value="{{ signUpOld.first_name }}">
 							{% if signupErrors.first_name %}
 								<span class="help-block">{{ signupErrors.first_name | first }}</span>
 							{% endif %}
 						</div>
 						<div class="form-group{{ signupErrors.surname ? ' has-error' : '' }}">
 							<label for="surname">Surname</label>
-							<input type="text" name="surname" id="surname" placeholder="Last Name" class="form-control">
+							<input type="text" name="surname" id="surname" placeholder="Last Name" class="form-control" value="{{ signUpOld.surname }}">
 							{% if signupErrors.surname %}
 								<span class="help-block">{{ signupErrors.surname | first }}</span>
 							{% endif %}
 						</div>
 						<div class="form-group{{ signupErrors.email ? ' has-error' : '' }}">
 							<label for="email">Email</label>
-							<input type="email" name="email" id="email" placeholder="you@domain.com" class="form-control">
+							<input type="email" name="email" id="email" placeholder="you@domain.com" class="form-control" value="{{ signUpOld.email }}">
 							{% if signupErrors.email %}
 								<span class="help-block">{{ signupErrors.email | first }}</span>
 							{% endif %}
 						</div>
 						<div class="form-group{{ signupErrors.username ? ' has-error' : '' }}">
 							<label for="username">Username</label>
-							<input type="text" name="username" id="username" placeholder="username" class="form-control">
+							<input type="text" name="username" id="username" placeholder="username" class="form-control" value="{{ signUpOld.username }}">
 							{% if signupErrors.username %}
 								<span class="help-block">{{ signupErrors.username | first }}</span>
 							{% endif %}
