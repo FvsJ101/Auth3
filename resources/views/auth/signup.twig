@@ -54,6 +54,9 @@
 							{% endif %}
 						</div>
 						<button type="submit" class="btn btn-primary">Register</button>
+						
+						{#SET THIS UP IN THE CSRFVIEWMIDDLEWARE SECTION FOR THE KEY#}
+						{{ csrf.field | raw }}
 					</form>
 				</div>
 			</div>
