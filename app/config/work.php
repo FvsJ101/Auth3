@@ -30,7 +30,7 @@ return array(
         'smtp_secure' => 'tls',
         'host'        => 'smtp.frostweb.co.za',
         'username'    => 'no-reply@frostweb.co.za',
-        'password'    => 'N0-R3ply2016',
+        'password'    => '',
         'port'        => 587,
         'html'        => true
     ),
