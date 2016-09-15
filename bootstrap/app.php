@@ -114,6 +114,10 @@ $container['AuthController'] = function ($container) {
 	return new App\Controllers\Auth\AuthController($container);
 };
 
+//CONTACT US
+$container['ContactController'] = function ($container){
+    return new \App\Controllers\ContactController($container);
+};
 
 require __DIR__.'/../app/routes.php';
 

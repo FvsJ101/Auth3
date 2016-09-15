@@ -21,3 +21,18 @@ header.carousel .fill {
 .carousel-inner{
  margin-top: -30px;
 }
+
+
+/*=================== SOCIAL ===========================*/
+
+.fa-2x {
+	font-size: 2em;
+}
+.fa {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

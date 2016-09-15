@@ -4,10 +4,19 @@
 $app->get('/', 'HomeController:index' )->setName('home');
 
 
+//SUPER GROUP NOT REGISTERED
+
 //AUTHCONTROLLER
 $app->get('/auth/signup','AuthController:getSignUp')->setName('auth.signup');
 //ON SUBMISSION
 $app->post('/auth/signup','AuthController:postSignUp');
+
+//CONTACT GET
+$app->get('/contact','ContactController:getContactUs')->setName('contact');
+//CONTACT POST
+$app->post('/contact','ContactController:postContactUs');
+
+///SUPER GROUP REGISTERED
 
 //AUTHCONTROLLER SIGN IN SECTION
 $app->get('/auth/signin','AuthController:getSignIn')->setName('auth.signin');

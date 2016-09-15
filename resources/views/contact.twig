@@ -1,0 +1,91 @@
+{% extends "templates/default_no_banner.twig" %}
+
+{% block content %}
+	<!-- Page Heading/Breadcrumbs -->
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Contact Us</h1>
+		</div>
+	</div>
+	<!-- /.row -->
+	<!-- Content Row -->
+	
+	<!-- /.row -->
+	<div class="row">
+		<div class="col-md-6"> <!-- Embedded Google Map -->
+			<iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3019.550771520018!2d28.17169369595851!3d-25.8407871248827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95646f2acd8345%3A0xcd1ad6cbbb31e01f!2s200+Harvard+Ave%2C+Centurion%2C+0014!5e0!3m2!1sen!2sza!4v1473914246540" style="border:0" allowfullscreen></iframe>
+			<div class="col-md-8">
+				<h3>Contact Details</h3>
+				{#<p>
+					3481 Melrose Place<br>Beverly Hills, CA 90210<br>
+				</p>#}
+				<p><i class="fa fa-phone"></i>
+					<abbr title="Phone">P</abbr>: (082) 591-2364</p>
+				<p><i class="fa fa-envelope-o"></i>
+					<abbr title="Email">E</abbr>: <a href="mailto:michael@frostweb.co.za">michael@frostweb.co.za</a>
+				</p>
+				<p><i class="fa fa-clock-o"></i>
+					<abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+				<ul class="list-unstyled list-inline list-social-icons">
+					<li>
+						<a href="https://www.facebook.com/profile.php?id=554743834"><i class="fa fa-facebook-square fa-2x">FB pic</i></a>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com/in/michael-meyer-85860628?trk=hp-identity-name"><i class="fa fa-linkedin-square fa-2x">IND PC</i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Sign Up</div>
+				<div class="panel-body">
+					<div class="controls">
+						{#{{ contactErrors | json_encode }}#}
+						<form action="{{ path_for('contact') }}" method="post" name="signup-form">
+							<div class="control-group form-group">
+								<div class="controls">
+									<label>Full Name:</label>
+									<input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Please enter your name.">
+									<p class="help-block"></p>
+								</div>
+							</div>
+							<div class="control-group form-group">
+								<div class="controls">
+									<label>Phone Number:</label>
+									<input type="tel" class="form-control" id="phone" name="phone" required data-validation-required-message="Please enter your phone number.">
+								</div>
+							</div>
+							<div class="control-group form-group">
+								<div class="controls">
+									<label>Email Address:</label>
+									<input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+								</div>
+							</div>
+							<div class="control-group form-group">
+								<div class="controls">
+									<label>Message:</label>
+									<textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+								</div>
+							</div>
+							<button type="submit" class="btn btn-primary">Contact us</button>
+							{#SET THIS UP IN THE CSRFVIEWMIDDLEWARE SECTION FOR THE KEY#}
+							{{ csrf.field | raw }}
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /.row -->
+	
+	<hr>
+	
+	<!-- Footer -->
+{% endblock %}
