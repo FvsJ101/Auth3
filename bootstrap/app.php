@@ -9,6 +9,7 @@ use Slim\Csrf\Guard AS Guard;
 use App\Middleware\CsrfViewMiddleware AS Csrf;
 use App\Auth\Auth AS Auth;
 use App\Middleware\UserAuthMiddleware AS UserAuthMiddleware;
+use App\Mail\Mailer AS Mailer;
 
 session_start();
 
@@ -79,6 +80,26 @@ $container['csrf'] = function ($container){
 //AUTH CLASS USED FOR CHECKING USER AUTHENTICATION IE REGISTERED, SINGED IN, PERMISSION, REMEMBER
 $container['auth'] = function ($container){
     return new Auth();
+
+};
+
+//MAILER
+$container['mailer'] = function ($container) {
+	$Config = $container['Config'];
+	
+	$mailer = new PHPMailer;
+	
+	$mailer->Host           = $Config->get('mail.host');
+	$mailer->SMTPAuth       = $Config->get('mail.smtp_auth');
+	$mailer->SMTPSecure     = $Config->get('mail.smtp_secure');
+	$mailer->Port           = $Config->get('mail.port');
+	$mailer->Username       = $Config->get('mail.username');
+	$mailer->Password       = $Config->get('mail.password');
+	
+	$mailer->isHTML($Config->get('mail.html'));
+	
+	return new Mailer($container->view, $mailer);
+	
 
 };
 

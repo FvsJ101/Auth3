@@ -28,9 +28,9 @@ return array(
     'mail' => array(
         'smtp_auth'   => true,
         'smtp_secure' => 'tls',
-        'host'        => 'smtp.gmail.com',
-        'username'    => '',
-        'password'    => '',
+        'host'        => 'smtp.frostweb.co.za',
+        'username'    => 'no-reply@frostweb.co.za',
+        'password'    => 'N0-R3ply2016',
         'port'        => 587,
         'html'        => true
     ),

@@ -15,7 +15,9 @@
     "hassankhan/config": "0.10.0",
     "illuminate/database": "v5.2.43",
     "respect/validation": "1.1.4",
-    "slim/csrf": "0.7.0"
+    "slim/csrf": "0.7.0",
+    "phpmailer/phpmailer": "v5.2.16",
+    "ircmaxell/random-lib": "v1.2.0"
   },
   "autoload":{
     "psr-4":{
