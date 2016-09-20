@@ -47,27 +47,33 @@
 				<div class="panel-heading">Sign Up</div>
 				<div class="panel-body">
 					<div class="controls">
-						{#{{ contactErrors | json_encode }}#}
-						{{ name }}
-						{{ surname }}
+						{#{{ formErrors | json_encode }}#}
 						<form action="{{ path_for('contact') }}" method="post" name="signup-form">
-							<div class="control-group form-group">
+							<div class="form-group{{ formErrors.name ? ' has-error' : '' }}">
 								<div class="controls">
 									<label for="name">Full Name:</label>
 									<input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Please enter your name.">
-									<p class="help-block"></p>
+									{% if formErrors.name %}
+										<span class="help-block">{{ formErrors.name | first }}</span>
+									{% endif %}
 								</div>
 							</div>
-							<div class="control-group form-group">
+							<div class="form-group{{ formErrors.phone ? ' has-error' : '' }}">
 								<div class="controls">
 									<label for="phone">Phone Number:</label>
 									<input type="tel" class="form-control" id="phone" name="phone" required data-validation-required-message="Please enter your phone number.">
+									{% if formErrors.phone %}
+										<span class="help-block">{{ formErrors.phone | first }}</span>
+									{% endif %}
 								</div>
 							</div>
-							<div class="control-group form-group">
+							<div class="form-group{{ formErrors.email ? ' has-error' : '' }}">
 								<div class="controls">
 									<label for="email">Email Address:</label>
 									<input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+									{% if formErrors.email %}
+										<span class="help-block">{{ formErrors.email | first }}</span>
+									{% endif %}
 								</div>
 							</div>
 							<div class="form-group">
@@ -79,11 +85,14 @@
 									<option name="design">Design</option>
 								</select>
 							</div>
-							<div class="control-group form-group">
+							<div class="form-group{{ formErrors.message ? ' has-error' : '' }}">
 								<div class="controls">
 									<label for="message">Message:</label>
 									<textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
 								</div>
+								{% if formErrors.message %}
+									<span class="help-block">{{ formErrors.message | first }}</span>
+								{% endif %}
 							</div>
 							<button type="submit" class="btn btn-primary">Contact us</button>
 							{#SET THIS UP IN THE CSRFVIEWMIDDLEWARE SECTION FOR THE KEY#}

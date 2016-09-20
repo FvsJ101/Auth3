@@ -24,8 +24,11 @@ class Validator
             }
         }
         
+        
+        
+        
         //TAKE THE ERRORS AND THEN SAVE IT IN A SESSION WHERE WE CAN GET IT IN THE MIDDLEWARE VALIDATIONERRORSMIDDLEWARE
-        $_SESSION['signupErrors'] = $this->errors;
+        $_SESSION['formErrors'] = $this->errors;
         
         return $this;
       

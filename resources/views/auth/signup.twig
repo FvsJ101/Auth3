@@ -1,7 +1,7 @@
 {% extends "/templates/default_no_banner.twig" %}
 
 {#TO VIEW INFO PASSED TO THE VIEW#}
-{#{{ signupErrors | json_encode }}#}
+{#{{ formErrors | json_encode }}#}
 
 {% block content %}
 	<div class="row">
@@ -9,48 +9,48 @@
 			<div class="panel panel-primary">
 				<div class="panel-heading">Sign Up</div>
 				<div class="panel-body">
-					{#{{ signupErrors | json_encode }}#}
+					{#{{ formErrors | json_encode }}#}
 					<form action="{{ path_for('auth.signup') }}" method="post" name="signup-form">
-						<div class="form-group{{ signupErrors.first_name ? ' has-error' : '' }}">
+						<div class="form-group{{ formErrors.first_name ? ' has-error' : '' }}">
 							<label for="first_name">Name</label>
 							<input type="text" name="first_name" id="first_name" placeholder="Name" class="form-control" value="{{ signUpOld.first_name }}">
-							{% if signupErrors.first_name %}
-								<span class="help-block">{{ signupErrors.first_name | first }}</span>
+							{% if formErrors.first_name %}
+								<span class="help-block">{{ formErrors.first_name | first }}</span>
 							{% endif %}
 						</div>
-						<div class="form-group{{ signupErrors.surname ? ' has-error' : '' }}">
+						<div class="form-group{{ formErrors.surname ? ' has-error' : '' }}">
 							<label for="surname">Surname</label>
 							<input type="text" name="surname" id="surname" placeholder="Last Name" class="form-control" value="{{ signUpOld.surname }}">
-							{% if signupErrors.surname %}
-								<span class="help-block">{{ signupErrors.surname | first }}</span>
+							{% if formErrors.surname %}
+								<span class="help-block">{{ formErrors.surname | first }}</span>
 							{% endif %}
 						</div>
-						<div class="form-group{{ signupErrors.email ? ' has-error' : '' }}">
+						<div class="form-group{{ formErrors.email ? ' has-error' : '' }}">
 							<label for="email">Email</label>
 							<input type="email" name="email" id="email" placeholder="you@domain.com" class="form-control" value="{{ signUpOld.email }}">
-							{% if signupErrors.email %}
-								<span class="help-block">{{ signupErrors.email | first }}</span>
+							{% if formErrors.email %}
+								<span class="help-block">{{ formErrors.email | first }}</span>
 							{% endif %}
 						</div>
-						<div class="form-group{{ signupErrors.username ? ' has-error' : '' }}">
+						<div class="form-group{{ formErrors.username ? ' has-error' : '' }}">
 							<label for="username">Username</label>
 							<input type="text" name="username" id="username" placeholder="username" class="form-control" value="{{ signUpOld.username }}">
-							{% if signupErrors.username %}
-								<span class="help-block">{{ signupErrors.username | first }}</span>
+							{% if formErrors.username %}
+								<span class="help-block">{{ formErrors.username | first }}</span>
 							{% endif %}
 						</div>
-						<div class="form-group{{ signupErrors.password ? ' has-error' : '' }}">
+						<div class="form-group{{ formErrors.password ? ' has-error' : '' }}">
 							<label for="password">Password</label>
 							<input type="password" name="password" id="password" placeholder="Password" class="form-control">
-							{% if signupErrors.password %}
-								<span class="help-block">{{ signupErrors.password | first }}</span>
+							{% if formErrors.password %}
+								<span class="help-block">{{ formErrors.password | first }}</span>
 							{% endif %}
 						</div>
-						<div class="form-group{{ signupErrors.confirmed_password ? ' has-error' : '' }}">
+						<div class="form-group{{ formErrors.confirmed_password ? ' has-error' : '' }}">
 							<label for="con_pass">Confirm Password</label>
 							<input type="password" name="confirmed_password" id="con_pass" placeholder="Confirm Password" class="form-control">
-							{% if signupErrors.confirmed_password %}
-								<span class="help-block">{{ signupErrors.confirmed_password | first }}</span>
+							{% if formErrors.confirmed_password %}
+								<span class="help-block">{{ formErrors.confirmed_password | first }}</span>
 							{% endif %}
 						</div>
 						<button type="submit" class="btn btn-primary">Register</button>
