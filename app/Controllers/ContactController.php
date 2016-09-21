@@ -4,32 +4,32 @@
 namespace App\Controllers;
 
 use Respect\Validation\Validator AS v;
+use App\Middleware\BreadCrumbs AS BreadCrumbs;
 
 class ContactController extends Controller
 {
     
     public function getContactUs ($request, $response)
     {
-        return $this->view->render($response,'contact.twig');
+		return $this->view->render($response,'contact.twig');
     }
     
     public function postContactUs ($request, $response)
     {
-        
-        #TODO VALIDATION ON THE FROM
-    
-        $name =  $request->getParam('name');
-        $phone = $request->getParam('phone');
-        $email = $request->getParam('email');
-        $message = $request->getParam('message');
 	
+        //POST VALUES
+	    $name = $request->getParam('name');
+	    $phone = $request->getParam('phone');
+	    $email = $request->getParam('email');
+	    $message = $request->getParam('message');
 	
+		//FORM VALIDATION
 		$validation = $this->validator->validate($request,array(
 			//KEY IS DEPENDED ON THE NAME VALUES FROM THE FORM
-			'name'         => v::alpha()->notEmpty(),
-			'phone'            => v::phone()->notEmpty(),
-			'email'              => v::email()->noWhitespace()->notEmpty(),
-			'message'           => v::notEmpty()
+			'name'    => v::alpha()->notEmpty(),
+			'phone'   => v::phone()->notEmpty(),
+			'email'   => v::email()->noWhitespace()->notEmpty(),
+			'message' => v::notEmpty()
 		));
 		
 	

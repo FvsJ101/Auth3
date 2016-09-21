@@ -1,7 +1,8 @@
 <div class="container">
 	<ol class="breadcrumb">
-		<li><a href="#">Home</a></li>
-		<li><a href="#">Library</a></li>
-		<li class="active">Data</li>
+		{{ breadCrumbs | json_encode }}
+			{% for crumbs in breadCrumbs %}
+				<li class="{{ crumbs.active ? 'active' : '' }}"><a href="{{ path_for(crumbs.uri|e) }}">{{ crumbs.route }}</a></li>
+			{% endfor %}
 	</ol>
 </div>

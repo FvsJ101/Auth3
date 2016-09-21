@@ -1,0 +1,40 @@
+<?php
+
+
+namespace App\Middleware;
+
+
+class BreadCrumbs extends Middleware
+{
+	public function __invoke($request, $response, $next){
+		
+		unset($_SESSION['breadCrumbs']);
+		//ALWAYS BE HOME
+		$_SESSION['breadCrumbs'] []= array("route"=>"Home","uri"=>"home");
+		
+		//GET THE NAME OF CURRENT SELECTED PAGE
+		$routeName = $request->getAttribute('route')->getName();
+		
+		//BUILD BREADCRUMBS
+		switch($routeName){
+			case "contact":
+				$_SESSION['breadCrumbs'] []= array("route"=>ucfirst($routeName),"uri"=>$routeName,"active"=>"active");
+			break;
+			case "auth.signup":
+				$_SESSION['breadCrumbs'] []= array("route"=>"Register","uri"=>$routeName,"active"=>"active");
+			break;
+			case "auth.signin":
+				$_SESSION['breadCrumbs'] []= array("route"=>"Sign In","uri"=>$routeName,"active"=>"active");
+			break;
+		}
+		
+		
+		//ALLOW VIEW TO USE IT
+		$this->container->view->getEnvironment()->addGlobal('breadCrumbs',$_SESSION['breadCrumbs']);
+		$response = $next($request, $response);
+		return $response;
+		
+	}
+	
+	
+}

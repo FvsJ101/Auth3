@@ -1,5 +1,5 @@
 <?php
-// This is linked to the controller in the app file
+// This is linked to the controller:method in the app file
 // HomeController:index refers to the Calls and then the method being used. 
 $app->get('/', 'HomeController:index' )->setName('home');
 
@@ -22,7 +22,6 @@ $app->post('/contact','ContactController:postContactUs');
 $app->get('/auth/signin','AuthController:getSignIn')->setName('auth.signin');
 //ON SUBMISSION
 $app->post('/auth/signin','AuthController:postSignIn');
-
 
 //AUTHCONTROLLER SIGNING THE USER OUT
 $app->get('/auth/logout','AuthController:getLogout')->setName('auth.logout');

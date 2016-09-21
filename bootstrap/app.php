@@ -11,6 +11,9 @@ use App\Auth\Auth AS Auth;
 use App\Middleware\UserAuthMiddleware AS UserAuthMiddleware;
 use App\Mail\Mailer AS Mailer;
 
+
+use App\Middleware\BreadCrumbs AS BreadCrumbs;
+
 session_start();
 
 //C:\bla\Auth3
@@ -119,6 +122,9 @@ $app->add($container->csrf);
 //CUSTOM MIDDLEWARE FOR THE USER AUTHENTICATED
 $app->add(new UserAuthMiddleware($container));
 
+
+//BREADCRUMBS
+$app->add(new BreadCrumbs($container));
 
 /*///////////ALLOW THE VALIDATION LIBRARY TO USE CUSTOM RULES/////////////////*/
 v::with('App\\Validation\\Rules\\');
