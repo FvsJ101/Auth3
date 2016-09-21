@@ -16,6 +16,9 @@ $app->get('/contact','ContactController:getContactUs')->setName('contact');
 //CONTACT POST
 $app->post('/contact','ContactController:postContactUs');
 
+
+
+
 ///SUPER GROUP REGISTERED
 
 //AUTHCONTROLLER SIGN IN SECTION
