@@ -67,7 +67,7 @@ class AuthController extends Controller
         
         //PARAMS NEEDED $REQUST FROM SLIM AND THE ARRAY OF RULES
         $validation = $this->validator->validate($request,array(
-            //KEY IS DEPENDED ON THE NAME VALUES FROM THE FORM
+            //KEY IS ORDER DEPENDED ON THE NAME VALUES FROM THE FORM
             'first_name'         => v::alpha(),
             'surname'            => v::alpha(),
             'email'              => v::email()->noWhitespace()->notEmpty()->EmailAvailable(),
@@ -77,7 +77,7 @@ class AuthController extends Controller
                 
         ));
     
-    
+        //CHECK IF IT PASSES VALIDATION
         if($validation->failed()){
     
             return $response->withRedirect($this->router->pathFor('auth.signup'));
@@ -85,7 +85,7 @@ class AuthController extends Controller
         }
     
     
-        //CREATES A USER
+        //CREATES THE USER
         $user = User::create(array(
             //getParams RETURNS WHOLE POST ARRAY getParam RETURNS ENTITY
             'username'   => $request->getParam('username'),
@@ -94,7 +94,15 @@ class AuthController extends Controller
             'email'      => $request->getParam('email'),
             'password'   => password_hash($request->getParam('password'),PASSWORD_DEFAULT)
         ));
-        
+	
+	
+	    //SENDS ACTIVATION EMAIL
+	    $this->mailer->send('email/registered.twig', array('user'=>$user,'identifier'=>"TESTING"), function ($message) use($user) {
+		    $message->to($user->email);
+		    $message->subject('Activate Your Account');
+		    $message->from('No-Reply@frostweb.co.za');
+		
+	    });
         
         //TODO add the mail to activate the user
         //TODO add the page that will receive the user and check mail link activate user
