@@ -16,7 +16,8 @@ $app->get('/contact','ContactController:getContactUs')->setName('contact');
 //CONTACT POST
 $app->post('/contact','ContactController:postContactUs');
 
-
+//ABOUT US
+$app->get('/about','AboutController:about')->setName('about');
 
 
 ///SUPER GROUP REGISTERED

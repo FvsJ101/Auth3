@@ -25,13 +25,13 @@ return array(
     ),
 
     'mail' => array(
-        'smtp_auth'   => true,
-        'smtp_secure' => 'tls',
-        'host'        => 'smtp.gmail.com',
-        'username'    => '',
-        'password'    => '',
-        'port'        => 587,
-        'html'        => true
+	    'smtp_auth'   => true,
+	    'smtp_secure' => 'tls',
+	    'host'        => 'smtp.frostweb.co.za',
+	    'username'    => 'no-reply@frostweb.co.za',
+	    'password'    => '',
+	    'port'        => 587,
+	    'html'        => true
     ),
 
     'twig' => array(
