@@ -32,7 +32,7 @@ delete from `user` where `id` > 0;
 alter table `user` auto_increment 0;
 
 /*YOUR DEFAULT PASSWORD*/
-INSERT INTO `user` (username, first_name, last_name, email, password, flag_active, active_hash, recover_hash, remember_identifier, remember_token, created_at, updated_at, flag_delete) VALUES ('Admin', 'Michael', 'Meyer', 'michael@frostweb.co.za', '$2y$10$ZNOTXiBbtpxi/bGS.4G.kOfn3RdJdQZKzQ5/S9BL7rL3veIz86KfG', 0, null, null, null, null, '2016-08-30 07:20:11', '2016-08-30 07:20:11', 0);
+INSERT INTO `user` (username, first_name, last_name, email, password, flag_active, active_hash, recover_hash, remember_identifier, remember_token, created_at, updated_at, flag_delete) VALUES ('Admin', 'Michael', 'Meyer', 'michael@frostweb.co.za', '$2y$10$ZNOTXiBbtpxi/bGS.4G.kOfn3RdJdQZKzQ5/S9BL7rL3veIz86KfG', 1, null, null, null, null, '2016-08-30 07:20:11', '2016-08-30 07:20:11', 1);
 
 
 /*---------------- END OF USERS TABLE --------------------------*/

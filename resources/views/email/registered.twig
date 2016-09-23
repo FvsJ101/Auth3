@@ -4,5 +4,5 @@
 {% block content %}
 	<h3>Activating your account.</h3>
     <p>You registered at Frostweb.</p>
-    <p>Activate your account by using this link: <a href="{{ base_url() }}{{ path_for('home') }}?email={{ user.email }}&identifier={{ identifier|url_encode }}">Activate</a></p>
+    <p>Activate your account by using this link: <a href="{{ base_url() }}/activate?email={{ user.email }}&{{ {'identifier': identifier}|url_encode }}">Activate</a></p>
 {% endblock %}

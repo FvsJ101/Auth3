@@ -10,6 +10,7 @@ use App\Middleware\CsrfViewMiddleware AS Csrf;
 use App\Auth\Auth AS Auth;
 use App\Middleware\UserAuthMiddleware AS UserAuthMiddleware;
 use App\Mail\Mailer AS Mailer;
+use RandomLib\Factory AS RandomLib;
 
 
 use App\Middleware\BreadCrumbs AS BreadCrumbs;
@@ -106,6 +107,14 @@ $container['mailer'] = function ($container) {
 
 };
 
+//RANDOMLIB HASH GENERATOR
+$container['randomlib'] = function ($container) {
+	$factory = new RandomLib();
+	return $factory->getMediumStrengthGenerator();
+};
+
+
+//////////MIDDLEWARE SECTION/////////////////
 //ADDING MIDDLEWARE TO THE APPLICATION
 $app->add(new ValidationErrors($container));
 

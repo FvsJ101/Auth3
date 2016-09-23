@@ -10,6 +10,10 @@ $app->get('/', 'HomeController:index' )->setName('home');
 $app->get('/auth/signup','AuthController:getSignUp')->setName('auth.signup');
 //ON SUBMISSION
 $app->post('/auth/signup','AuthController:postSignUp');
+//ACTIVATE ACCOUNT
+$app->get('/activate','AuthController:getActivateAccount')->setName('activate');
+
+
 
 //CONTACT GET
 $app->get('/contact','ContactController:getContactUs')->setName('contact');

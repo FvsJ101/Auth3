@@ -22,7 +22,7 @@ class AuthController extends Controller
 	    //PARAMS NEEDED $REQUST FROM SLIM AND THE ARRAY OF RULES
 	    $validation = $this->validator->validate($request,array(
 		    //KEY IS DEPENDED ON THE NAME VALUES FROM THE FORM
-		    'identification' => v::alpha()->notEmpty(),
+		    'identification' => v::notEmpty(),
 		    'password'       => v::noWhitespace()->notEmpty()->stringType()->length(6,NULL)
 	    ));
 	
@@ -84,30 +84,29 @@ class AuthController extends Controller
         
         }
     
-    
+        //SECURITY KEY SALT
+        $identifier = $this->randomlib->generateString(128,'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+       
+        
         //CREATES THE USER
         $user = User::create(array(
             //getParams RETURNS WHOLE POST ARRAY getParam RETURNS ENTITY
-            'username'   => $request->getParam('username'),
-            'first_name' => $request->getParam('first_name'),
-            'last_name'  => $request->getParam('surname'),
-            'email'      => $request->getParam('email'),
-            'password'   => password_hash($request->getParam('password'),PASSWORD_DEFAULT)
+            'username'    => $request->getParam('username'),
+            'first_name'  => $request->getParam('first_name'),
+            'last_name'   => $request->getParam('surname'),
+            'email'       => $request->getParam('email'),
+            'password'    => password_hash($request->getParam('password'),PASSWORD_DEFAULT),
+            'active_hash' => $identifier
         ));
 	
 	
 	    //SENDS ACTIVATION EMAIL
-	    $this->mailer->send('email/registered.twig', array('user'=>$user,'identifier'=>"TESTING"), function ($message) use($user) {
+	    $this->mailer->send('email/registered.twig', array('user'=>$user,'identifier'=>$identifier), function ($message) use($user) {
 		    $message->to($user->email);
 		    $message->subject('Activate Your Account');
 		    $message->from('No-Reply@frostweb.co.za');
 		
 	    });
-        
-        //TODO add the mail to activate the user
-        //TODO add the page that will receive the user and check mail link activate user
-        
-        
         
         //REDIRECT TO HOME
         //this->router WE ACCRESS THE CONTAINER PASSED IN THE APP SECTION "home" is the setName GIVEN IN ROUTES FILE
@@ -115,13 +114,34 @@ class AuthController extends Controller
         
     }
     
-    
     //SIGNS THE USER OUT
     public function getLogout($request, $response)
     {
     
         $this->auth->logout();
         return $response->withRedirect($this->router->pathFor('home'));
+    
+    }
+    
+    //ACTIVATE THE ACCOUNT
+    public function getActivateAccount($request, $response)
+    {
+        //GET THE PARAMETERS
+        $email = $request->getParam('email');
+        $identifier = $request->getParam('identifier');
+        
+        
+        $successActivation = $this->auth->activate($email,$identifier);
+        
+        
+        if($successActivation != true){
+	        #TODO SECCUESSFULL ACTIVATION MESSAGE
+	        return $response->withRedirect($this->router->pathFor('contact'));
+        }
+       
+        
+        #TODO SECCUESSFULL ACTIVATION MESSAGE
+	    return $response->withRedirect($this->router->pathFor('home'));
     
     }
     

@@ -12,7 +12,7 @@ class Auth
 	{
 		
 		//CHECK WEATHER THE USERNAME OR EMAIL IS REGISTERED
-		$user = User::where('email', $identity)->orWhere('username', $identity)->first();
+		$user = User::where('email', $identity)->orWhere('username', $identity)->where('flag_active',1)->first();
 		
 		//FAILED TO FIND USER
 		if(!$user){
@@ -50,6 +50,25 @@ class Auth
     
         unset($_SESSION['user']);
         unset($_SESSION['auth']);
+    
+    }
+    
+    public function activate($email, $identifier)
+    {
+	
+	    //CHECK IF IT CAN FIND A USER WITH THE PARAMS
+	    $check_user = User::where('email',$email)->where('active_hash',$identifier)->count();
+	
+	    //IF NOTHING IS FOUND REDIRECT TO CONTACT US
+	    if ($check_user != 1){
+		    return false;
+	    }
+	
+	    $user = User::select('id')->where('email',$email)->first();
+	
+	    User::where('id',$user->id)->update(array('flag_active'=>1,'active_hash'=>NULL));
+	    
+	    return true;
     
     }
 	
