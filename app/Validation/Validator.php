@@ -8,13 +8,10 @@ use Respect\Validation\Exceptions\NestedValidationException;
 
 class Validator
 {
-    
     protected $errors;
     
     public function validate ($request, array $rules)
     {
-    
-    
         foreach($rules as $field=> $rule){
     
             try{
@@ -24,21 +21,15 @@ class Validator
             }
         }
         
-        
-        
-        
         //TAKE THE ERRORS AND THEN SAVE IT IN A SESSION WHERE WE CAN GET IT IN THE MIDDLEWARE VALIDATIONERRORSMIDDLEWARE
         $_SESSION['formErrors'] = $this->errors;
         
         return $this;
-      
     }
     
     public function failed()
     {
-    
         return !empty($this->errors);
-    
     }
     
 }

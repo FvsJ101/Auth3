@@ -18,13 +18,29 @@ class AuthController extends Controller
     //WHATS GOING TO HAPPEN WHEN WE SUBMIT THE FORM (POST SIGN IN)
     public function postSignIn($request, $response)
     {
+	
+	    //PARAMS NEEDED $REQUST FROM SLIM AND THE ARRAY OF RULES
+	    $validation = $this->validator->validate($request,array(
+		    //KEY IS DEPENDED ON THE NAME VALUES FROM THE FORM
+		    'identification' => v::alpha()->notEmpty(),
+		    'password'       => v::noWhitespace()->notEmpty()->stringType()->length(6,NULL)
+	    ));
+	
+		//CHECK IF VALIDATION PASSES
+	    if($validation->failed()){
+		
+		    return $response->withRedirect($this->router->pathFor('auth.signin'));
+		
+	    }
         
+        //ATTEMPTS TO AUTHENTICATE THE USER
         $auth = $this->auth->attempt(
-            $request->getParam('username_email'),
+            $request->getParam('identification'),
             $request->getParam('password')
         
         );
         
+        //FAILES AUTHENTICATION
         if(!$auth){
             return $response->withRedirect($this->router->pathFor('auth.signin'));
         }

@@ -22,14 +22,20 @@
 				<div class="panel-body">
 					{#{{ signupErrors | json_encode }}#}
 					<form action="{{ path_for('auth.signin') }}" method="post" name="signup-form">
-						<div class="form-group{{ signupErrors.first_name ? ' has-error' : '' }}">
-							<label for="username_email">Username Or Email</label>
-							<input type="text" name="username_email" id="username_email" placeholder="Username / Email" class="form-control">
+						<div class="form-group{{ formErrors.identification ? ' has-error' : '' }}">
+							<label for="identification">Username Or Email</label>
+							<input type="text" name="identification" id="identification" placeholder="Username / Email" class="form-control">
 						</div>
-						<div class="form-group{{ signupErrors.password ? ' has-error' : '' }}">
+						{% if formErrors.identification %}
+							<span class="help-block">{{ formErrors.identification | first }}</span>
+						{% endif %}
+						<div class="form-group{{ formErrors.password ? ' has-error' : '' }}">
 							<label for="password">Password</label>
 							<input type="password" name="password" id="password" placeholder="Password" class="form-control">
 						</div>
+						{% if formErrors.password %}
+							<span class="help-block">{{ formErrors.password | first }}</span>
+						{% endif %}
 						<button type="submit" class="btn btn-primary">Sign In</button>
 						
 						{#SET THIS UP IN THE CSRFVIEWMIDDLEWARE SECTION FOR THE KEY#}
