@@ -135,7 +135,6 @@ $container['HomeController'] = function ($container) {
 	return new App\Controllers\HomeController($container);
 };
 
-
 //AUTH CONTROLLER FOR SIGNUP PAGE
 $container['AuthController'] = function ($container) {
 	return new App\Controllers\Auth\AuthController($container);
@@ -143,11 +142,17 @@ $container['AuthController'] = function ($container) {
 
 //CONTACT US
 $container['ContactController'] = function ($container){
-    return new \App\Controllers\ContactController($container);
+    return new App\Controllers\ContactController($container);
 };
 
+//ABOUT US
 $container['AboutController'] = function ($container){
-	return new \App\Controllers\AboutController($container);
+	return new App\Controllers\AboutController($container);
+};
+
+//SERVICES
+$container['ServiceController'] = function ($container){
+	return new App\Controllers\ServiceController($container);
 };
 
 require __DIR__.'/../app/routes.php';

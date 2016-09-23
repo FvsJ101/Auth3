@@ -17,8 +17,10 @@ $app->get('/contact','ContactController:getContactUs')->setName('contact');
 $app->post('/contact','ContactController:postContactUs');
 
 //ABOUT US
-$app->get('/about','AboutController:about')->setName('about');
+$app->get('/about','AboutController:getAboutUs')->setName('about');
 
+//SERVICE
+$app->get('/service','ServiceController:getServices')->setName('service');
 
 ///SUPER GROUP REGISTERED
 

@@ -48,6 +48,9 @@ class ContactController extends Controller
 	        case 'Web Development';
 	            $mail_to = 'michael@frostweb.co.za';
 	        break;
+	        case 'SEO';
+		        $mail_to = 'michael@frostweb.co.za';
+	        break;
 	        default:
 	            $mail_to = 'michael@frostweb.co.za';
         }
@@ -56,6 +59,7 @@ class ContactController extends Controller
 	    $this->mailer->send('email/contact.twig', array('name'=>$name,'phone'=>$phone,'email'=>$email,'message'=>$message), function ($message) use($mail_to) {
 	        $message->to($mail_to);
 	        $message->subject('New Contact Request');
+	        $message->from('No-Reply@frostweb.co.za');
 	    
 	    });
 	   
@@ -63,6 +67,7 @@ class ContactController extends Controller
 		$this->mailer->send('email/thankyou.twig', array('name'=>$name), function ($message) use($email) {
 		    $message->to($email);
 		    $message->subject('Thank You');
+			$message->from('No-Reply@frostweb.co.za');
 		});
 	    
         

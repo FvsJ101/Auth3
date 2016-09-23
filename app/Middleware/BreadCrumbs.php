@@ -18,7 +18,7 @@ class BreadCrumbs extends Middleware
 		//BUILD BREADCRUMBS
 		switch($routeName){
 			case "contact":
-				$_SESSION['breadCrumbs'] []= array("route"=>ucfirst($routeName),"uri"=>$routeName,"active"=>"active");
+				$_SESSION['breadCrumbs'] []= array("route"=>"Contact us","uri"=>$routeName,"active"=>"active");
 			break;
 			case "auth.signup":
 				$_SESSION['breadCrumbs'] []= array("route"=>"Register","uri"=>$routeName,"active"=>"active");
@@ -29,8 +29,10 @@ class BreadCrumbs extends Middleware
 			case "about":
 				$_SESSION['breadCrumbs'] []= array("route"=>"About us","uri"=>$routeName,"active"=>"active");
 			break;
+			case "service":
+				$_SESSION['breadCrumbs'] []= array("route"=>"Services","uri"=>$routeName,"active"=>"active");
+			break;
 		}
-		
 		
 		//ALLOW VIEW TO USE IT
 		$this->container->view->getEnvironment()->addGlobal('breadCrumbs',$_SESSION['breadCrumbs']);
