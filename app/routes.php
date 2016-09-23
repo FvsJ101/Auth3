@@ -13,8 +13,6 @@ $app->post('/auth/signup','AuthController:postSignUp');
 //ACTIVATE ACCOUNT
 $app->get('/activate','AuthController:getActivateAccount')->setName('activate');
 
-
-
 //CONTACT GET
 $app->get('/contact','ContactController:getContactUs')->setName('contact');
 //CONTACT POST
@@ -25,6 +23,11 @@ $app->get('/about','AboutController:getAboutUs')->setName('about');
 
 //SERVICE
 $app->get('/service','ServiceController:getServices')->setName('service');
+
+
+
+
+
 
 ///SUPER GROUP REGISTERED
 

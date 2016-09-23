@@ -8,7 +8,7 @@ class User extends Model
 {
     //TO TELL ELOUET TO USE WHAT TABLE
     protected $table  = "user";
-    
+        
     protected $fillable = array(
         // list fields that can be edited
         'username',
@@ -24,14 +24,4 @@ class User extends Model
         'flag_expire',
         'flag_delete',
     );
-	
-	public function activateAccount()
-	{
-		$this->update(array(
-			'flag_active' => 1,
-			'active_hash' => NULL
-		
-		));
-	}
-
 }

@@ -36,3 +36,4 @@ INSERT INTO `user` (username, first_name, last_name, email, password, flag_activ
 
 
 /*---------------- END OF USERS TABLE --------------------------*/
+

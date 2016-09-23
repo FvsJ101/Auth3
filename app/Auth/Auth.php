@@ -66,7 +66,7 @@ class Auth
 	
 	    $user = User::select('id')->where('email',$email)->first();
 	
-	    User::where('id',$user->id)->update(array('flag_active'=>1,'active_hash'=>NULL));
+	    User::where('id',$user->id)->update(array('flag_active'=>1,'active_hash'=>NULL,'fk_admin_type'=>3));
 	    
 	    return true;
     
