@@ -100,7 +100,9 @@ $container['mailer'] = function ($container) {
 	$mailer->Username       = $Config->get('mail.username');
 	$mailer->Password       = $Config->get('mail.password');
 	
+	
 	$mailer->isHTML($Config->get('mail.html'));
+	$mailer->SetFrom('No-Reply@frostweb.co.za','No-Reply');
 	
 	return new Mailer($container->view, $mailer);
 	

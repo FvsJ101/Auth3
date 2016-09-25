@@ -21,9 +21,11 @@ class BreadCrumbs extends Middleware
 				$_SESSION['breadCrumbs'] []= array("route"=>"Contact us","uri"=>$routeName,"active"=>"active");
 			break;
 			case "auth.signup":
+				$_SESSION['breadCrumbs'] []= array("route"=>"Registration","uri"=>$routeName,"active"=>"active");
 				$_SESSION['breadCrumbs'] []= array("route"=>"Register","uri"=>$routeName,"active"=>"active");
 			break;
 			case "auth.signin":
+				$_SESSION['breadCrumbs'] []= array("route"=>"Registration","uri"=>$routeName,"active"=>"active");
 				$_SESSION['breadCrumbs'] []= array("route"=>"Sign In","uri"=>$routeName,"active"=>"active");
 			break;
 			case "about":
