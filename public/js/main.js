@@ -12,11 +12,17 @@
 
 $(function () {
     
-    // DYNAMICALLY ADD ACTIVE CLASS TO MENU ITEM
-    var pathNameOfCurrentPage = window.location.pathname;
-    $('a[href="' + pathNameOfCurrentPage + '"]').parent().addClass('active');
+    dynamicActiveClass();
     
     //NEXT CODE
   
   
 });
+
+// DYNAMICALLY ADD ACTIVE CLASS TO MENU ITEM
+function dynamicActiveClass() {
+    
+    var pathNameOfCurrentPage = window.location.pathname;
+    $('a[href="' + pathNameOfCurrentPage + '"]').parent().addClass('active');
+    
+}

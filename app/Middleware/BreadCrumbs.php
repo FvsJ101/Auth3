@@ -34,6 +34,9 @@ class BreadCrumbs extends Middleware
 			case "service":
 				$_SESSION['breadCrumbs'] []= array("route"=>"Services","uri"=>$routeName,"active"=>"active");
 			break;
+			case "auth.profile":
+				$_SESSION['breadCrumbs'] []= array("route"=>"Profile","uri"=>$routeName,"active"=>"active");
+			break;
 		}
 		
 		//ALLOW VIEW TO USE IT

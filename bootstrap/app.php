@@ -151,6 +151,11 @@ $container['AuthController'] = function ($container) {
 	return new App\Controllers\Auth\AuthController($container);
 };
 
+//AUTH PROFILE CONTROLLER FOR VIEWING PROFILE
+$container['ProfileController'] = function ($container) {
+	return new App\Controllers\Auth\ProfileController($container);
+};
+
 //CONTACT US
 $container['ContactController'] = function ($container){
     return new App\Controllers\ContactController($container);

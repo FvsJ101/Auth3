@@ -17,7 +17,5 @@ class Middleware
     {
         $this->container = $container;
     }
-
-    
     
 }
