@@ -14,10 +14,26 @@
 	{% include 'templates/partials/breadcrumbs.twig' %}
 	<!----------------/.breadCrumbs---------------->
 	
-	{{ test | json_encode }}
+	{#{{ user | json_encode }}#}
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<!-- Default panel contents -->
+				<div class="panel-heading"><h4>Your Information</h4></div>
+				<div class="panel-body">
+					<p>Type: {{ user.admin_type }}</p>
+					<p>Username: {{ user.username }}</p>
+					<p>Name: {{ user.first_name }} {{ user.last_name }} </p>
+					<p>Email: {{ user.email }}</p>
+					<p>Registered Date: {{ user.created_at }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			blank
+		</div>
+	</div>
 	
-	{% for item in test %}
-		{{ item.name }}
-	{% endfor %}
+	
 
 {% endblock %}
