@@ -70,6 +70,7 @@ class ContactController extends Controller
 			$message->from('No-Reply@frostweb.co.za');
 		});
 	    
+        #TODO MESSAGE SENT
         
         //IF MESSAGES SENT BACK TO HOME
         return $response->withRedirect($this->router->pathFor('home'));

@@ -100,13 +100,10 @@ $container['mailer'] = function ($container) {
 	$mailer->Username       = $Config->get('mail.username');
 	$mailer->Password       = $Config->get('mail.password');
 	
-	
 	$mailer->isHTML($Config->get('mail.html'));
-	$mailer->SetFrom('No-Reply@frostweb.co.za','No-Reply');
+	$mailer->SetFrom($Config->get('mail.sendfrom_email'),$Config->get('mail.sendfrom_person'));
 	
 	return new Mailer($container->view, $mailer);
-	
-
 };
 
 //RANDOMLIB HASH GENERATOR
@@ -117,12 +114,11 @@ $container['randomlib'] = function ($container) {
 
 
 //////////MIDDLEWARE SECTION/////////////////
-//ADDING MIDDLEWARE TO THE APPLICATION
+//VALIDATION OF ERRORS
 $app->add(new ValidationErrors($container));
 
 //PASSES THE OLD FROM DATA BACK TO THE FORM FOR SIGNUP / REGISTER PAGE
 $app->add(new OldInPut($container));
-
 
 //CUSTOM MIDDLEWARE FOR THE CSRF
 $app->add(new Csrf($container));
@@ -132,7 +128,6 @@ $app->add($container->csrf);
 
 //CUSTOM MIDDLEWARE FOR THE USER AUTHENTICATED
 $app->add(new UserAuthMiddleware($container));
-
 
 //BREADCRUMBS
 $app->add(new BreadCrumbs($container));

@@ -135,12 +135,11 @@ class AuthController extends Controller
         
         
         if($successActivation != true){
-	        #TODO SECCUESSFULL ACTIVATION MESSAGE
+	        #TODO FAILURE ACTIVATION MESSAGE
 	        return $response->withRedirect($this->router->pathFor('contact'));
         }
-       
         
-        #TODO SECCUESSFULL ACTIVATION MESSAGE
+        #TODO SUCCESSFUL ACTIVATION MESSAGE
 	    return $response->withRedirect($this->router->pathFor('home'));
     
     }
