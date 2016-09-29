@@ -27,8 +27,6 @@ $app->get('/service','ServiceController:getServices')->setName('service');
 
 
 
-
-
 ///SUPER GROUP REGISTERED
 
 //AUTHCONTROLLER SIGN IN SECTION
@@ -41,3 +39,7 @@ $app->get('/auth/logout','AuthController:getLogout')->setName('auth.logout');
 
 //PROFILECOTROLLER VIEW YOUR PROFILE
 $app->get('/auth/profile','ProfileController:getViewProfile')->setName('auth.profile');
+
+
+
+//SUPER ADMIN WITH ADMIN TYPE OF 1
