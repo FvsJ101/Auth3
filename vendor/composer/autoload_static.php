@@ -19,6 +19,7 @@ class ComposerStaticInitbb160bb2a67e9df189e9ab2b784bf23f
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\Translation\\' => 30,
             'Slim\\Views\\' => 11,
+            'Slim\\Flash\\' => 11,
             'Slim\\Csrf\\' => 10,
             'Slim\\' => 5,
         ),
@@ -68,6 +69,10 @@ class ComposerStaticInitbb160bb2a67e9df189e9ab2b784bf23f
         'Slim\\Views\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/twig-view/src',
+        ),
+        'Slim\\Flash\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/slim/flash/src',
         ),
         'Slim\\Csrf\\' => 
         array (

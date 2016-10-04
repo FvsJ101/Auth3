@@ -17,6 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/respect/validation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/slim/csrf" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/slim/flash" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/slim/slim" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/slim/twig-view" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -53,6 +54,7 @@
           <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/respect/validation" />
           <root url="file://$MODULE_DIR$/vendor/slim/csrf" />
+          <root url="file://$MODULE_DIR$/vendor/slim/flash" />
           <root url="file://$MODULE_DIR$/vendor/slim/slim" />
           <root url="file://$MODULE_DIR$/vendor/slim/twig-view" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
@@ -75,6 +77,7 @@
           <root url="file://$MODULE_DIR$/vendor/psr/http-message" />
           <root url="file://$MODULE_DIR$/vendor/respect/validation" />
           <root url="file://$MODULE_DIR$/vendor/slim/csrf" />
+          <root url="file://$MODULE_DIR$/vendor/slim/flash" />
           <root url="file://$MODULE_DIR$/vendor/slim/slim" />
           <root url="file://$MODULE_DIR$/vendor/slim/twig-view" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />

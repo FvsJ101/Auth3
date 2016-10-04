@@ -135,11 +135,11 @@ class AuthController extends Controller
         
         
         if($successActivation != true){
-	        #TODO FAILURE ACTIVATION MESSAGE
+	        $this->flash->addMessage('error','Please contact general support as we failed to activiate you at this time.');
 	        return $response->withRedirect($this->router->pathFor('contact'));
         }
-        
-        #TODO SUCCESSFUL ACTIVATION MESSAGE
+	
+	    $this->flash->addMessage('success','Your Account is now activated you can now login.');
 	    return $response->withRedirect($this->router->pathFor('home'));
     
     }

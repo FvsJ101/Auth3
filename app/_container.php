@@ -5,6 +5,7 @@ use Slim\Csrf\Guard AS Guard;
 use App\Auth\Auth AS Auth;
 use App\Mail\Mailer AS Mailer;
 use RandomLib\Factory AS RandomLib;
+use Slim\Flash\Messages AS Flash;
 
 
 //Need to get the slim container and add the twig view to it.
@@ -87,4 +88,9 @@ $container['mailer'] = function ($container) {
 $container['randomlib'] = function ($container) {
 	$factory = new RandomLib();
 	return $factory->getMediumStrengthGenerator();
+};
+
+//FLASH MESSAGE SECTION
+$container['flash'] = function ($container){
+	return new Flash();
 };

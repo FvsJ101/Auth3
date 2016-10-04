@@ -31,3 +31,15 @@ header.carousel .fill {
  margin-top: -30px;
 }
 
+
+.hideService{
+	display: none;
+}
+
+figure.col-md-3.hideService {
+	opacity: 0;
+}
+
+.minor-margin {
+	margin-top: 10px;
+}

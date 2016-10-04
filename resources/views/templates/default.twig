@@ -16,8 +16,10 @@
 {% include 'templates/partials/navigation.twig' %}
 {% include 'templates/partials/carousel.twig' %}
 
+
 	<!-- Content -->
 	<div class="container">
+		{% include 'templates/partials/flash.twig' %}
 		{% block content %}{% endblock %}
 	</div>
 {% include 'templates/partials/footer.twig' %}

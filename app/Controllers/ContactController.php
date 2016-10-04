@@ -69,8 +69,8 @@ class ContactController extends Controller
 		    $message->subject('Thank You');
 			$message->from('No-Reply@frostweb.co.za');
 		});
-	    
-        #TODO MESSAGE SENT
+	
+	    $this->flash->addMessage('info','Your email request has been sent. Thank You.');
         
         //IF MESSAGES SENT BACK TO HOME
         return $response->withRedirect($this->router->pathFor('home'));

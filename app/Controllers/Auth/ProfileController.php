@@ -13,7 +13,7 @@ class ProfileController extends Controller
 	{
 		//GET THE CURRENT LOGGED IN USER INFO
 		$user = User::join('admin_type','user.fk_admin_type','=','admin_type.id')->select('user.username','user.first_name','user.created_at','user.last_name','user.email','admin_type.name as admin_type')->where('user.id',$_SESSION['user'])->first();
-	
+
 		return $this->view->render($response,'/auth/profile.twig', array('user'=>($user)));
 	}
 }

@@ -5,6 +5,7 @@ use Respect\Validation\Validator AS v;
 use App\Middleware\UserAuthMiddleware AS UserAuthMiddleware;
 use App\Middleware\CsrfViewMiddleware AS Csrf;
 use App\Middleware\BreadCrumbs AS BreadCrumbs;
+use App\Middleware\FlashMessageMiddleware AS FlashMessage;
 
 
 //////////MIDDLEWARE SECTION/////////////////
@@ -25,6 +26,9 @@ $app->add(new UserAuthMiddleware($container));
 
 //BREADCRUMBS
 $app->add(new BreadCrumbs($container));
+
+//FLASH MESSAGE
+$app->add(new FlashMessage($container));
 
 /*///////////ALLOW THE VALIDATION LIBRARY TO USE CUSTOM RULES/////////////////*/
 v::with('App\\Validation\\Rules\\');
