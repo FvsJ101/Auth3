@@ -36,10 +36,18 @@ header.carousel .fill {
 	display: none;
 }
 
-figure.col-md-3.hideService {
+figure.col-md-3 {
 	opacity: 0;
 }
 
 .minor-margin {
 	margin-top: 10px;
+}
+
+.closeFlashMessage{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	display: block;
+	float: right;
 }

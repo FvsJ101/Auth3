@@ -42,10 +42,12 @@ class AuthController extends Controller
         
         //FAILES AUTHENTICATION
         if(!$auth){
+	        $this->flash->addMessage('error','Please try again could not sign in.');
             return $response->withRedirect($this->router->pathFor('auth.signin'));
         }
     
         //SUCCESS LOGIN
+	    $this->flash->addMessage('success','You are now signed in.');
         return $response->withRedirect($this->router->pathFor('home'));
         
     }

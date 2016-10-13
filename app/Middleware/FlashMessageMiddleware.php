@@ -11,8 +11,9 @@ class FlashMessageMiddleware extends Middleware
 		if(isset($_SESSION['slimFlash']) && is_array($_SESSION['slimFlash'])){
 			
 			$this->container->view->getEnvironment()->addGlobal('flash',$_SESSION['slimFlash']);
-		
 		}
+		
+		unset($_SESSION['slimFlash']);
 		
 		$response = $next($request, $response);
 		

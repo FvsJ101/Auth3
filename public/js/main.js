@@ -15,12 +15,12 @@ $(function () {
     dynamicActiveClass();
     googleAnalyrics();
     serviceFadeIn();
-    
+    flashMessageClose();
     
     // DYNAMICALLY ADD ACTIVE CLASS TO MENU ITEM
     function dynamicActiveClass() {
-        
         var pathNameOfCurrentPage = window.location.pathname;
+        
         $('a[href="' + pathNameOfCurrentPage + '"]').parent().addClass('active');
         
     }
@@ -42,16 +42,25 @@ $(function () {
             //console.log(wScroll);
             
             var divOffset = $('div #serviceOffset').offset().top;
-            
-            /*if (wScroll > divOffset - ($(window).height() / 1.2)){
+            var do_once = 0;
+    
+           
+            if (wScroll > divOffset - ($(window).height() / 1.2)){
+               
                 $('#serviceOffset #service').each(function (i) {
                    setTimeout(function () {
-                       $('#serviceOffset #service').eq(i).hide().show(1000);
+                       $('#serviceOffset #service').eq(i).removeClass(".hideService");
+                       $('#serviceOffset #service').eq(i).fadeIn("slow");
                    })
                 })
-            }*/
-            
+            }
         });
+    }
+    
+    function flashMessageClose() {
+        $('#flashClose').on('click', function () {
+            $('#flashClose').parent().fadeOut( "slow" );
+        })
     }
 
 });
