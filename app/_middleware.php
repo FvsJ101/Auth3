@@ -7,7 +7,6 @@ use App\Middleware\CsrfViewMiddleware AS Csrf;
 use App\Middleware\BreadCrumbs AS BreadCrumbs;
 use App\Middleware\FlashMessageMiddleware AS FlashMessage;
 
-
 //////////MIDDLEWARE SECTION/////////////////
 //VALIDATION OF ERRORS
 $app->add(new ValidationErrors($container));

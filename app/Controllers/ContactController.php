@@ -62,6 +62,8 @@ class ContactController extends Controller
 	        $message->from('No-Reply@frostweb.co.za');
 	    
 	    });
+	
+	   
 	   
 	    //SENDS TO USER
 		$this->mailer->send('email/thankyou.twig', array('name'=>$name), function ($message) use($email) {

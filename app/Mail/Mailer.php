@@ -30,6 +30,12 @@ class Mailer
 		call_user_func($callback, $message);
 		
 		$this->mailer->send();
+		
+		//REMOVES ADDRESS FOR NEXT EMAIL TO SEND
+		$this->mailer->ClearAddresses();
+		
+		//TO REMOVE ANY ATTACHMENTS YOU MIGHT ADDED
+		//$this->mailer->ClearAttachments();
 	
 	}
 	
