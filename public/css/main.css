@@ -13,10 +13,6 @@ h1,h2,h3,h4,h5,h6{
 	font-family: sig-five, sans-serif !important;
 }
 
-* {
-	margin: 0;
-}
-
 html, body {
 	height: 100%;
 }
@@ -27,7 +23,6 @@ nav.navbar.navbar-default.container.navbar-fixed-top {
 #logoFrost {
 	width: 100%;
 	height: auto;
-	
 }
 
 header.carousel .fill {
@@ -35,7 +30,6 @@ header.carousel .fill {
 	height: 700px;
 	background-position: center;
 	background-size: cover;
-	
 }
 
 .img-portfolio {
@@ -69,27 +63,24 @@ header.carousel .fill {
 	float: right;
 	margin-right: 8%;
 	margin-top: 8%;
-	
 }
 
 .carousel-two img{
 	float: right;
 	margin-right: 8%;
 	margin-top: 8%;
-	
 }
 
 .carousel-three img{
 	float: right;
 	margin-right: 8%;
 	margin-top: 8%;
-	
 }
+
 .carousel-four img{
 	float: right;
 	margin-right: 8%;
 	margin-top: 8%;
-	
 }
 
 .closeFlashMessage{
@@ -103,7 +94,6 @@ header.carousel .fill {
 .home-about{
 	background:	url("../images/slide-banner/slide-background.jpg") center no-repeat;
 	min-height: 460px;
-	
 }
 
 .home-domains{
@@ -118,20 +108,18 @@ header.carousel .fill {
 .home-hosting-cold{
 	min-height: 597px;
 	background:	url("../images/brackgrounds/cold.png") center no-repeat;
-
 }
 
 .home-hosting-chilly{
 	min-height: 597px;
 	background:	url("../images/brackgrounds/chilly.png") center no-repeat;
-	
 }
 
 .home-hosting-snowy{
 	min-height: 597px;
 	background:	url("../images/brackgrounds/snowy.png") center no-repeat;
-	
 }
+
 #hosting:hover {
 	box-shadow: 0px 5px 70px #4d7985;
 }
@@ -152,6 +140,13 @@ header.carousel .fill {
 	padding-top: 38%;
 }
 
+.home-domain-price{
+	padding-top: 10px;
+	font-size: 20px;
+	color: #a0e8f9;
+	font-weight: bold;
+}
+
 .enquire_btn {
 	color: #58d7f4;
 	font-size: 1.2em !important;
@@ -160,6 +155,28 @@ header.carousel .fill {
 .enquire_btn:hover {
 	color: #ffffff !important;
 }
+
+.home-hosting-button{
+	margin-top: -110px;
+	background-color: #000;
+	color: #fff!important;
+	border: 1px #3b555f solid !important;
+}
+
+.home-hosting-button:hover {
+	background-color: #1d5793;
+}
+
+.home-news-letter{
+	border-radius: 0 !important;
+	background-color: #000;
+}
+
+.home-news-letter:hover {
+	background-color: #1d5793;
+	color: #fff!important;
+}
+
 /*/////////////////////////////////SOCIAL///////////////////////////////////*/
 
 span#facebook {
@@ -215,3 +232,142 @@ span#linkin a{
 .text_color{
 	color: #a0e8f9;
 }
+/*////////////////////////////////ANIMATIONS///////////////////*/
+
+@-webkit-keyframes swing
+{
+	15%
+	{
+		-webkit-transform: translateX(5px);
+		transform: translateX(5px);
+	}
+	30%
+	{
+		-webkit-transform: translateX(-5px);
+		transform: translateX(-5px);
+	}
+	50%
+	{
+		-webkit-transform: translateX(3px);
+		transform: translateX(3px);
+	}
+	65%
+	{
+		-webkit-transform: translateX(-3px);
+		transform: translateX(-3px);
+	}
+	80%
+	{
+		-webkit-transform: translateX(2px);
+		transform: translateX(2px);
+	}
+	100%
+	{
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+@keyframes swing
+{
+	15%
+	{
+		-webkit-transform: translateX(5px);
+		transform: translateX(5px);
+	}
+	30%
+	{
+		-webkit-transform: translateX(-5px);
+		transform: translateX(-5px);
+	}
+	50%
+	{
+		-webkit-transform: translateX(3px);
+		transform: translateX(3px);
+	}
+	65%
+	{
+		-webkit-transform: translateX(-3px);
+		transform: translateX(-3px);
+	}
+	80%
+	{
+		-webkit-transform: translateX(2px);
+		transform: translateX(2px);
+	}
+	100%
+	{
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+
+.swing:hover
+{
+	-webkit-animation: swing 1s ease;
+	animation: swing 1s ease;
+	-webkit-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+}
+
+.grow:hover
+{
+	-webkit-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	transform: scale(1.3);
+	transition: 1s ease-in-out;
+}
+
+.rotate:hover
+{
+	-webkit-transform: rotateZ(-360deg);
+	-ms-transform: rotateZ(-360deg);
+	transform: rotateZ(-360deg);
+	transition: 1s
+}
+
+/*///////////////////////// MEDIA QUERIES //////////////////////*/
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 1920px){
+	.about-divider{
+		margin-top: -80px;
+	}
+}
+
+@media (min-width: 1025px) and (max-width: 1600px) {
+	.about-divider{
+		margin-top: -50px;
+	}
+}
+
+@media (min-width: 980px) and (max-width: 1024px) {
+	.carousel-divider{
+		margin-top: 40px;
+	}
+	.about-divider{
+		margin-top: -40px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.carousel-divider{
+		margin-top: 50px;
+	}
+	.about-divider{
+		margin-top: -32px;
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.carousel-divider{
+		margin-top: 30px;
+	}
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 1020px) {
+	
+}
+
+/* Landscape phones and down */
+@media (max-width: 480px) {  }

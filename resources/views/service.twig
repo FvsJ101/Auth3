@@ -3,17 +3,65 @@
 {% block content %}
 	{#{{ auth.userInfo | json_encode }}#}
 	<!-- Page Heading/Breadcrumbs -->
-	<div class="row">
+{#	<div class="row">
 		<div class="col-lg-12">
 			<h1 class="page-header">Service</h1>
 		</div>
 	</div>
-	<!-- /.row -->
-	
-	{% include 'templates/partials/breadcrumbs.twig' %}
-	
-	<!----------------flashMessage---------------->
-	{% include 'templates/partials/flash.twig' %}
-	<!----------------/.flashMessage---------------->
-
+	<!-- /.row -->#}
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12" style="background-color: #000000">
+				<div style="background-color: #000000" align="center"><img src="{{ base_url() }}/images/logo/service-logo-.png" alt="service-logo"></div>
+				<h2 style="margin-bottom: 50px;" align="center">OUR SERVICES</h2>
+			</div>
+			
+			{% include 'templates/partials/breadcrumbs.twig' %}
+			
+			<!----------------flashMessage---------------->
+			{% include 'templates/partials/flash.twig' %}
+			<!----------------/.flashMessage---------------->
+			
+			<div class="col-md-3 col-sm-6">
+				<div align="center">
+					<img class="rotate" src="{{ base_url() }}/images/icons/icon-design.png" alt="service_design">
+				</div>
+				<div class="text-center">
+					<h4 class="text_color">DESIGN</h4>
+					<p style="min-height: 110px;">We offer print and website design work.</p>
+				</div>
+				<div align="center"><a href="{{ path_for('contact') }}" class="btn enquire_btn btn-sm"><span style="color: #0078ff;">{</span> enquire today <span style="color: #0078ff;">}</span></a></div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div align="center">
+					<img class="rotate" src="{{ base_url() }}/images/icons/icon-dev.png" alt="service_webdev">
+				</div>
+				<div class="text-center">
+					<h4 class="text_color">WEBSITES</h4>
+					<p style="min-height: 110px;">Need a new website. Just give us a call and we will do it with ice cold precision</p>
+				</div>
+				<div align="center"><a href="{{ path_for('contact') }}" class="btn enquire_btn btn-sm"><span style="color: #0078ff;">{</span> enquire today <span style="color: #0078ff;">}</span></a></div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div align="center">
+					<img class="rotate" src="{{ base_url() }}/images/icons/icon-hosting.png" alt="service_hosting">
+				</div>
+				<div class="text-center">
+					<h4 class="text_color">HOSTING</h4>
+					<p style="min-height: 110px;">Need a place to store your new website or even move from another hosting company. Check out our hosting options just for you.</p>
+				</div>
+				<div align="center"><a href="{{ path_for('contact') }}" class="btn enquire_btn btn-sm"><span style="color: #0078ff;">{</span> enquire today <span style="color: #0078ff;">}</span></a></div>
+			</div>
+			<div class="col-md-3 col-sm-6">
+				<div align="center">
+					<img class="rotate" src="{{ base_url() }}/images/icons/icon-seo.png" alt="service_seo">
+				</div>
+				<div class="text-center">
+					<h4 class="text_color">SEO</h4>
+					<p style="min-height: 110px;">Want to be on googles top 10 search results. We can get you there. We will inspect your current site and provide you with a specialised solution just for you.</p>
+				</div>
+				<div align="center"><a href="{{ path_for('contact') }}" class="btn enquire_btn btn-sm"><span style="color: #0078ff;">{</span> enquire today <span style="color: #0078ff;">}</span></a></div>
+			</div>
+		</div>
+	</div>
 {% endblock %}

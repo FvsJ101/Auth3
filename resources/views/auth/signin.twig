@@ -4,11 +4,12 @@
 {#{{ signupErrors | json_encode }}#}
 
 {% block content %}
+<div class="container">
 	<div class="row">
-		<div class="col-lg-12">
-			<h1 class="page-header">Sign In</h1>
+		<div class="col-lg-12" style="background-color: #000000">
+			<div style="background-color: #000000" align="center"><img src="{{ base_url() }}/images/logo/service-logo-.png" alt="service-logo"></div>
+			<h2 style="margin-bottom: 50px;" align="center">SIGN IN</h2>
 		</div>
-	</div>
 	<!-- /.row -->
 	
 	<!----------------breadCrumbs---------------->
@@ -20,32 +21,27 @@
 
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Sign In</div>
-				<div class="panel-body">
-					{#{{ signupErrors | json_encode }}#}
-					<form action="{{ path_for('auth.signin') }}" method="post" name="signup-form">
-						<div class="form-group{{ formErrors.identification ? ' has-error' : '' }}">
-							<label for="identification">Username Or Email</label>
-							<input type="text" name="identification" id="identification" placeholder="Username / Email" class="form-control">
-						</div>
-						{% if formErrors.identification %}
-							<span class="help-block">{{ formErrors.identification | first }}</span>
-						{% endif %}
-						<div class="form-group{{ formErrors.password ? ' has-error' : '' }}">
-							<label for="password">Password</label>
-							<input type="password" name="password" id="password" placeholder="Password" class="form-control">
-						</div>
-						{% if formErrors.password %}
-							<span class="help-block">{{ formErrors.password | first }}</span>
-						{% endif %}
-						<button type="submit" class="btn btn-primary">Sign In</button>
-						
-						{#SET THIS UP IN THE CSRFVIEWMIDDLEWARE SECTION FOR THE KEY#}
-						{{ csrf.field | raw }}
-					</form>
+			<form action="{{ path_for('auth.signin') }}" method="post" name="signup-form">
+				<div class="form-group{{ formErrors.identification ? ' has-error' : '' }}">
+					<label for="identification">Username Or Email</label>
+					<input type="text" name="identification" id="identification" placeholder="Username / Email" class="form-control">
 				</div>
-			</div>
+				{% if formErrors.identification %}
+					<span class="help-block">{{ formErrors.identification | first }}</span>
+				{% endif %}
+				<div class="form-group{{ formErrors.password ? ' has-error' : '' }}">
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password" placeholder="Password" class="form-control">
+				</div>
+				{% if formErrors.password %}
+					<span class="help-block">{{ formErrors.password | first }}</span>
+				{% endif %}
+				<button type="submit" class="btn home-news-letter">Sign In</button>
+				
+				{#SET THIS UP IN THE CSRFVIEWMIDDLEWARE SECTION FOR THE KEY#}
+				{{ csrf.field | raw }}
+			</form>
 		</div>
 	</div>
+</div>
 {% endblock %}

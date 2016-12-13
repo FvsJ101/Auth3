@@ -3,17 +3,60 @@
 {% block content %}
 	{#{{ auth.userInfo | json_encode }}#}
 	<!-- Page Heading/Breadcrumbs -->
-	<div class="row">
-		<div class="col-lg-12">
-			<h1 class="page-header">About us</h1>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12" style="background-color: #000000">
+				<div style="background-color: #000000" align="center"><img src="{{ base_url() }}/images/logo/service-logo-.png" alt="service-logo"></div>
+				<h2 style="margin-bottom: 50px;" align="center">ABOUT US</h2>
+			</div>
+			
+			{% include 'templates/partials/breadcrumbs.twig' %}
+			
+			<!----------------flashMessage---------------->
+			{% include 'templates/partials/flash.twig' %}
+			<!----------------/.flashMessage---------------->
+		</div>
+		<div class="row">
+			<h3>Our Developer</h3>
+			<p>&nbsp;</p>
+			<div class="col-md-2 col-sm-2 col-xs-12">
+				<img class="rotate img-responsive" src="{{ base_url() }}/images/icons/icon-dev.png" alt="service_webdev">
+				<p>&nbsp;</p>
+				<img class="rotate img-responsive" src="{{ base_url() }}/images/icons/icon-hosting.png" alt="service_hosting">
+				<p>&nbsp;</p>
+			</div>
+			<div class="col-md-10 col-sm-10 col-xs-12">
+				<p>Our developer has years experience within the web industry. Working with languages such as HTML, CSS, JQUERY and PHP.</p>
+				<p>Currently he is working as a cloud application developer increasing hes knowledge within these fields. He has found that the best solution is one made for the clients exact needs and all the CMS platforms always only meets 60% of that need.</p>
+				<p><a href="{{ path_for('home') }}">Frostweb</a> will build a site from the ground up meeting 100% of your needs with the help of our skilled developer.</p>
+			</div>
+		</div>
+		<p>&nbsp;</p>
+		<div class="row">
+			<h3>Our Designer</h3>
+			<p>&nbsp;</p>
+			<div class="col-md-2 col-sm-2 col-xs-12">
+				<img class="rotate img-responsive" src="{{ base_url() }}/images/icons/icon-design.png" alt="service_design">
+				<p>&nbsp;</p>
+			</div>
+			<div class="col-md-10 col-sm-10 col-xs-12">
+			<p><a href="http://www.marigoldstudios.co.za/" target="_blank">Marigold Studios</a> is a creative studio based in Pretoria, Gauteng. We are a small, quirky group of creatives working together since our doors opened in 2012 for clients across the globe.</p>
+			<p> We provide standout identities, creative illustrations, user-friendly websites, attention-grabbing social media & overall awesome design work & service for you! From research & strategy, to tweaking & finalising, we make sure to keep you in the know with what's happening with your project.</p>
+			<p>Deadlines met, formats provided for web & print, revised until perfect & effective beautiful designs? No more headaches for you to have to find different agencies, designers or studios for different projects? We cover A-Z & ensure that our clients are 100% happy before providing final materials!</p>
+			</div>
+		</div>
+		<p>&nbsp;</p>
+		<div class="row">
+			<h3>Our SEO Specialist</h3>
+			<p>&nbsp;</p>
+			<div class="col-md-2 col-sm-2 col-xs-12">
+				<img class="rotate img-responsive" src="{{ base_url() }}/images/icons/icon-seo.png" alt="service_seo">
+				<p>&nbsp;</p>
+			</div>
+			<div class="col-md-10 col-sm-10 col-xs-12">
+			<p>Coming Soon...</p>
+			</div>
 		</div>
 	</div>
-	<!-- /.row -->
-	
-	{% include 'templates/partials/breadcrumbs.twig' %}
-	
-	<!----------------flashMessage---------------->
-	{% include 'templates/partials/flash.twig' %}
-	<!----------------/.flashMessage---------------->
-	
+	<p>&nbsp;</p>
 {% endblock %}

@@ -1,14 +1,12 @@
 {% extends "templates/default_no_banner.twig" %}
 
 {% block content %}
-	<!-- Page Heading/Breadcrumbs -->
+<div class="container">
 	<div class="row">
-		<div class="col-lg-12">
-			<h1 class="page-header">Contact Us</h1>
-		</div>
+	<div class="col-lg-12" style="background-color: #000000">
+		<div style="background-color: #000000" align="center"><img src="{{ base_url() }}/images/logo/service-logo-.png" alt="service-logo"></div>
+		<h2 style="margin-bottom: 50px;" align="center">CONTACT US</h2>
 	</div>
-	<!-- /.row -->
-	<!-- Content Row -->
 	
 	{% include 'templates/partials/breadcrumbs.twig' %}
 	
@@ -31,87 +29,83 @@
 				</p>
 				<p><i class="fa fa-clock-o"></i>
 					<abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
-				<ul class="list-unstyled list-inline list-social-icons">
-					<li>
+				{#<ul class="list-unstyled list-inline list-social-icons">
+					<li id="facebook">
 						<a href="https://www.facebook.com/profile.php?id=554743834"><i class="fa fa-facebook-square fa-2x">FB pic</i></a>
 					</li>
-					<li>
+					<li id="linkin">
 						<a href="https://www.linkedin.com/in/michael-meyer-85860628?trk=hp-identity-name"><i class="fa fa-linkedin-square fa-2x">IND PC</i></a>
 					</li>
-					<li>
+					<li id="twitter">
 						<a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
 					</li>
-					<li>
-						<a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
-					</li>
-				</ul>
+				</ul>#}
+				<p style="width: 90px; padding: 0; margin: 0;">
+					<span id="linkin"><a href="https://www.linkedin.com/in/michael-meyer-85860628?trk=hp-identity-name" target="_blank"></a></span>
+					<span id="twitter"><a href="http://www.twitter.com" target="_blank"></a></span>
+					<span id="facebook"><a href="https://www.facebook.com/profile.php?id=554743834" target="_blank"></a></span>
+				</p>
 			</div>
 		</div>
 		<div class="col-md-6">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Sign Up</div>
-				<div class="panel-body">
+			{#{{ formErrors | json_encode }}#}
+			<form action="{{ path_for('contact') }}" method="post" name="signup-form">
+				<div class="form-group{{ formErrors.name ? ' has-error' : '' }}">
 					<div class="controls">
-						{#{{ formErrors | json_encode }}#}
-						<form action="{{ path_for('contact') }}" method="post" name="signup-form">
-							<div class="form-group{{ formErrors.name ? ' has-error' : '' }}">
-								<div class="controls">
-									<label for="name">Full Name:</label>
-									<input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Please enter your name.">
-									{% if formErrors.name %}
-										<span class="help-block">{{ formErrors.name | first }}</span>
-									{% endif %}
-								</div>
-							</div>
-							<div class="form-group{{ formErrors.phone ? ' has-error' : '' }}">
-								<div class="controls">
-									<label for="phone">Phone Number:</label>
-									<input type="tel" class="form-control" id="phone" name="phone" required data-validation-required-message="Please enter your phone number.">
-									{% if formErrors.phone %}
-										<span class="help-block">{{ formErrors.phone | first }}</span>
-									{% endif %}
-								</div>
-							</div>
-							<div class="form-group{{ formErrors.email ? ' has-error' : '' }}">
-								<div class="controls">
-									<label for="email">Email Address:</label>
-									<input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
-									{% if formErrors.email %}
-										<span class="help-block">{{ formErrors.email | first }}</span>
-									{% endif %}
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="about">Regarding</label>
-								<select class="form-control" id="about" name="about">
-									<option name="general">General</option>
-									<option name="hosting">Hosting</option>
-									<option name="web development">Web Development</option>
-									<option name="design">Design / Print</option>
-									<option name="seo">SEO</option>
-								</select>
-							</div>
-							<div class="form-group{{ formErrors.message ? ' has-error' : '' }}">
-								<div class="controls">
-									<label for="message">Message:</label>
-									<textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
-								</div>
-								{% if formErrors.message %}
-									<span class="help-block">{{ formErrors.message | first }}</span>
-								{% endif %}
-							</div>
-							<button type="submit" class="btn btn-primary">Contact us</button>
-							{#SET THIS UP IN THE CSRFVIEWMIDDLEWARE SECTION FOR THE KEY#}
-							{{ csrf.field | raw }}
-						</form>
+						<label for="name">Full Name:</label>
+						<input type="text" class="form-control" id="name" name="name" required data-validation-required-message="Please enter your name.">
+						{% if formErrors.name %}
+							<span class="help-block">{{ formErrors.name | first }}</span>
+						{% endif %}
 					</div>
 				</div>
-			</div>
+				<div class="form-group{{ formErrors.phone ? ' has-error' : '' }}">
+					<div class="controls">
+						<label for="phone">Phone Number:</label>
+						<input type="tel" class="form-control" id="phone" name="phone" required data-validation-required-message="Please enter your phone number.">
+						{% if formErrors.phone %}
+							<span class="help-block">{{ formErrors.phone | first }}</span>
+						{% endif %}
+					</div>
+				</div>
+				<div class="form-group{{ formErrors.email ? ' has-error' : '' }}">
+					<div class="controls">
+						<label for="email">Email Address:</label>
+						<input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+						{% if formErrors.email %}
+							<span class="help-block">{{ formErrors.email | first }}</span>
+						{% endif %}
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="about">Regarding</label>
+					<select class="form-control" id="about" name="about">
+						<option name="general">General</option>
+						<option name="hosting">Hosting</option>
+						<option name="web development">Web Development</option>
+						<option name="design">Design / Print</option>
+						<option name="seo">SEO</option>
+					</select>
+				</div>
+				<div class="form-group{{ formErrors.message ? ' has-error' : '' }}">
+					<div class="controls">
+						<label for="message">Message:</label>
+						<textarea rows="10" cols="100" class="form-control" id="message" name="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+					</div>
+					{% if formErrors.message %}
+						<span class="help-block">{{ formErrors.message | first }}</span>
+					{% endif %}
+				</div>
+				<button type="submit" class="btn home-news-letter">Contact us</button>
+				{#SET THIS UP IN THE CSRFVIEWMIDDLEWARE SECTION FOR THE KEY#}
+				{{ csrf.field | raw }}
+			</form>
 		</div>
 	</div>
 	<!-- /.row -->
-	
-	<hr>
+	<p>&nbsp;</p>
+</div>
+
 	
 	<!-- Footer -->
 {% endblock %}

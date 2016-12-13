@@ -2,6 +2,7 @@
 // This is linked to the controller:method in the app file
 // HomeController:index refers to the Calls and then the method being used. 
 $app->get('/', 'HomeController:index' )->setName('home');
+$app->post('/', 'HomeController:homeNewsLetter' )->setName('home');
 
 
 //SUPER GROUP NOT REGISTERED
