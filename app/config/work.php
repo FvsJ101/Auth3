@@ -46,7 +46,7 @@ return array(
 	),
 	
 	'mailchimp' => array(
-		'api_key'     => '91ce56b2213df17f59e3986a8c0548a4-us14',
-		'web_listing' => '62967cf0c5'
+		'api_key'     => '',
+		'web_listing' => ''
 	)
 );
