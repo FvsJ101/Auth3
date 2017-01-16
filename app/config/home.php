@@ -17,30 +17,5 @@ return array(
         'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
         'prefix'    => ''
-    ),
-
-    'auth' => array(
-        'session'  => 'user_id',
-        'remember' => 'user_r'
-    ),
-
-    'mail' => array(
-	    'smtp_auth'       => true,
-	    'smtp_secure'     => 'tls',
-	    'host'            => 'smtp.frostweb.co.za',
-	    'username'        => 'no-reply@frostweb.co.za',
-	    'password'        => '',
-	    'port'            => 587,
-	    'html'            => true,
-	    'sendfrom_email'  => 'No-Reply@frostweb.co.za',
-	    'sendfrom_person' => 'No-Reply'
-    ),
-
-    'twig' => array(
-        'debug'       => true,
-    ),
-
-    'csrf' => array(
-        'key' => 'csrf_token'
     )
 );
