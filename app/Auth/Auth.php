@@ -6,11 +6,20 @@ namespace App\Auth;
 
 use App\Models\User;
 
+/**
+ * Class Auth
+ * @package App\Auth
+ */
 class Auth
 {
+	
+	/**
+	 * @param $identity
+	 * @param $password
+	 * @return bool
+	 */
 	public function attempt($identity, $password)
 	{
-		
 		//CHECK WEATHER THE USERNAME OR EMAIL IS REGISTERED
 		$user = User::where('email', $identity)->orWhere('username', $identity)->where('flag_active',1)->first();
 		
@@ -31,13 +40,19 @@ class Auth
 		
 	}
 	
+	/**
+	 * @return bool
+	 */
 	public function checkUserLoggedIn ()
 	{
 		
 	    return isset($_SESSION['user']);
 	
 	}
- 
+	
+	/**
+	 * @return mixed
+	 */
 	public function userInfo()
 	{
 	
@@ -45,6 +60,9 @@ class Auth
 	
 	}
 	
+	/**
+	 * @unset user / auth
+	 */
 	public function logout()
     {
     
@@ -52,8 +70,13 @@ class Auth
         unset($_SESSION['auth']);
     
     }
-    
-    public function activate($email, $identifier)
+	
+	/**
+	 * @param $email
+	 * @param $identifier
+	 * @return bool
+	 */
+	public function activate($email, $identifier)
     {
 	
 	    //CHECK IF IT CAN FIND A USER WITH THE PARAMS

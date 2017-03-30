@@ -26,7 +26,15 @@ return array(
 	),
 	
 	'mail' => array(
-		
+		'smtp_auth'       => true,
+		'smtp_secure'     => 'tls',
+		'host'            => 'smtp.frostweb.co.za',
+		'username'        => 'no-reply@frostweb.co.za',
+		'password'        => '',
+		'port'            => 587,
+		'html'            => true,
+		'sendfrom_email'  => 'No-Reply@frostweb.co.za',
+		'sendfrom_person' => 'No-Reply'
 	),
 	
 	'twig' => array(
@@ -38,6 +46,7 @@ return array(
 	),
 	
 	'mailchimp' => array(
-		
+		'api_key'     => '91ce56b2213df17f59e3986a8c0548a4-us14',
+		'web_listing' => '62967cf0c5'
 	)
 );
