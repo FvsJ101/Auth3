@@ -20,9 +20,7 @@ $(function () {
     // DYNAMICALLY ADD ACTIVE CLASS TO MENU ITEM
     function dynamicActiveClass() {
         var pathNameOfCurrentPage = window.location.pathname;
-        
         $('a[href="' + pathNameOfCurrentPage + '"]').parent().addClass('active');
-        
     }
 
     //GOOGLE ANALYTICS
@@ -35,33 +33,32 @@ $(function () {
         ga('create', 'UA-84805393-1', 'auto');
         ga('send', 'pageview');
     }
-    
-    function serviceFadeIn() {
-        $(window).on('scroll',function () {
-            var wScroll = $(this).scrollTop();
-            //console.log(wScroll);
-            
-            var divOffset = $('div #serviceOffset').offset().top;
-            var do_once = 0;
-    
-           
-            if (wScroll > divOffset - ($(window).height() / 1.2)){
-               
-                $('#serviceOffset #service').each(function (i) {
-                   setTimeout(function () {
-                       $('#serviceOffset #service').eq(i).removeClass(".hideService");
-                       $('#serviceOffset #service').eq(i).fadeIn("slow");
-                   })
-                })
-            }
-        });
-    }
-    
-    function flashMessageClose() {
-        $('#flashClose').on('click', function () {
-            $('#flashClose').parent().fadeOut( "slow" );
-        })
-    }
+	
+	//SERVICE PAGE FADES IN THE SERVICES
+	function serviceFadeIn() {
+		$(window).on('scroll',function () {
+			var wScroll = $(window).scrollTop();;
+			//console.log(wScroll);
+			var divOffset = $('div #serviceOffset').offset().top;
+			if (wScroll > divOffset - ($(window).height() / 1.2)){
+				var increment = 3000
+				$('#serviceOffset #service').each(function (i) {
+					setTimeout(function () {
+						$('#serviceOffset #service').eq(i).removeClass(".hideService");
+						$('#serviceOffset #service').eq(i).fadeIn(increment);
+						increment = increment + 1500;
+					})
+				})
+			}
+		});
+	}
+	
+	//FUNCTION TO CLOSE THE FLASH MESSAGE BOX
+	function flashMessageClose() {
+		$('#flashClose').on('click', function () {
+			$('#flashClose').parent().fadeOut( "slow" );
+		})
+	}
 
 });
 

@@ -94,5 +94,16 @@ class Auth
 	    return true;
     
     }
+    
+    public function isSignedIn(){
+		
+		$isSingedIn = false;
+		
+		if(isset($_SESSION['user']) && $_SESSION['user']  > 0)
+			$isSingedIn = true;
+		
+		return $isSingedIn;
+		
+	}
 	
 }

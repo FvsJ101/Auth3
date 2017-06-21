@@ -335,7 +335,7 @@ span#linkin a{
 
 @media (min-width: 1025px) and (max-width: 1600px) {
 	.about-divider{
-		margin-top: -50px;
+		margin-top: -64px;
 	}
 }
 
@@ -371,3 +371,9 @@ span#linkin a{
 
 /* Landscape phones and down */
 @media (max-width: 480px) {  }
+
+/*///////////////////////// SERVICES //////////////////////*/
+
+.hideService{
+	display: none;
+}

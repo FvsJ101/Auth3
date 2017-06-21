@@ -6,9 +6,9 @@ use Respect\Validation\Validator AS v;
 
 Class HomeController extends Controller
 {
-    public function index ($request,$response)
+	public function index ($request,$response)
    {
-        return $this->view->render($response, 'home.twig');
+		return $this->view->render($response, 'home.twig');
    }
    
    public function homeNewsLetter ($request,$response){
@@ -22,10 +22,8 @@ Class HomeController extends Controller
 	
 	
 	   if($validation->failed()){
-		
 		   return $response->withRedirect($this->router->pathFor('home'));
 	   }
-	
 	
 	   $fname = $request->getParam('name');
 	   $email = $request->getParam('email');
@@ -62,18 +60,18 @@ Class HomeController extends Controller
 	   curl_close($ch);
 	
 	   // store the status message based on response code
-	   if ($httpCode == 200) {
-		   $this->flash->addMessage('info','Your have been added to our mailing list. Thank you!');
-	   } else {
-		   switch ($httpCode) {
-			   case 214:
-				   $this->flash->addMessage('warning','You are already subscribed.');
-			   break;
-			   default:
-				   $this->flash->addMessage('error','Some problem occurred, please try again.');
-			   break;
-		   }
+	   switch ($httpCode) {
+		   case 200:
+			   $this->flash->addMessage('info','Your have been added to our mailing list. Thank you!');
+		   break;
+			case 214:
+			   $this->flash->addMessage('warning','You are already subscribed.');
+		   break;
+		   default:
+			   $this->flash->addMessage('error','Some problem occurred, please try again.');
+		   break;
 	   }
+	  
 	
 	   return $this->view->render($response, 'home.twig');
    }
