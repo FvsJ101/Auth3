@@ -6,10 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    //TO TELL ELOUET TO USE WHAT TABLE
-    protected $table  = "user";
-        
-    protected $fillable = array(
+    //TO TELL ELOQUENT TO USE WHAT TABLE
+	/**
+	 * @var string
+	 */
+	protected $table  = "user";
+	
+	/**
+	 * @var array
+	 */
+	protected $fillable = array(
         // list fields that can be edited
         'username',
         'first_name',
