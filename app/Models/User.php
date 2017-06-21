@@ -24,7 +24,4 @@ class User extends Model
         'flag_expire',
         'flag_delete',
     );
-    
-    
-    
 }
