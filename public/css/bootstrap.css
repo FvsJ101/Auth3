@@ -3575,7 +3575,7 @@ tbody.collapse.in {
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
   text-decoration: none;
-  color: #262626;
+  color: #FFFFFF;
   background-color: #71a4b0;
 }
 .dropdown-menu > .active > a,
@@ -4526,7 +4526,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #5c96a4;
+  color: #FFFFFF;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,

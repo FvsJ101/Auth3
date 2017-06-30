@@ -27,7 +27,7 @@ nav.navbar.navbar-default.container.navbar-fixed-top {
 
 header.carousel .fill {
 	width: 100%;
-	height: 700px;
+	height: 400px;
 	background-position: center;
 	background-size: cover;
 }
@@ -37,7 +37,7 @@ header.carousel .fill {
 }
 
 .carousel-caption {
-	margin-bottom: 320px;
+	margin-bottom: 138px;
 }
 
 .carousel-one{
@@ -61,27 +61,33 @@ header.carousel .fill {
 
 .carousel-one img{
 	float: right;
-	margin-right: 8%;
-	margin-top: 8%;
+	margin-right: 25%;
+	margin-top: 2.7%;
 }
 
 .carousel-two img{
 	float: right;
-	margin-right: 8%;
-	margin-top: 8%;
+	margin-right: 25%;
+	margin-top: 2.7%;
 }
 
 .carousel-three img{
 	float: right;
-	margin-right: 8%;
-	margin-top: 8%;
+	margin-right: 25%;
+	margin-top: 2.7%;
 }
 
 .carousel-four img{
 	float: right;
-	margin-right: 8%;
-	margin-top: 8%;
+	margin-right: 25%;
+	margin-top: 2.7%;
 }
+
+.mac-container{
+	width: 250px;
+	height: 250px;
+}
+
 
 .closeFlashMessage{
 	width: 20px;
@@ -337,6 +343,10 @@ span#linkin a{
 	.about-divider{
 		margin-top: -64px;
 	}
+	
+	.carousel-divider{
+		margin-top: 30px;
+	}
 }
 
 @media (min-width: 980px) and (max-width: 1024px) {
@@ -355,13 +365,15 @@ span#linkin a{
 	.about-divider{
 		margin-top: -32px;
 	}
+	
+	.carousel-divider{
+		margin-top: 30px;
+	}
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
-	.carousel-divider{
-		margin-top: 30px;
-	}
+
 }
 
 /* Landscape phone to portrait tablet */
@@ -370,7 +382,11 @@ span#linkin a{
 }
 
 /* Landscape phones and down */
-@media (max-width: 480px) {  }
+@media (max-width: 480px) {
+	.about-divider{
+		margin-top: -32px;
+	}
+}
 
 /*///////////////////////// SERVICES //////////////////////*/
 
