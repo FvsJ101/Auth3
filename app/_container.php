@@ -26,9 +26,6 @@ TO GET ITEMS OUT OF THE CONFIG FILE
 //echo $Config->get('app.url');
 */
 
-
-
-
 //SETTING VIEW PARAMS TO CONTAINER
 $container['view'] = function ($container){
 	$view = new \Slim\Views\Twig(
@@ -65,7 +62,6 @@ $container['csrf'] = function ($container){
 //AUTH CLASS USED FOR CHECKING USER AUTHENTICATION IE REGISTERED, SINGED IN, PERMISSION, REMEMBER
 $container['auth'] = function ($container){
 	return new Auth();
-	
 };
 
 //MAILER

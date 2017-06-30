@@ -1,6 +1,6 @@
 {#INFO#}
 {% if flash.info is not null %}
-	<div class="alert alert-info minor-margin">
+	<div class="alert alert-info minor-margin" style="margin: 50px 0 20px 0;">
 		<span id="flashClose" class="closeFlashMessage glyphicon glyphicon-remove"></span>
 		<hr/>
 		{{ flash.info | first }}
@@ -9,7 +9,7 @@
 
 {#SUCCESS#}
 {% if  flash.success is not null %}
-	<div class="alert alert-success minor-margin">
+	<div class="alert alert-success minor-margin" style="margin: 50px 0 20px 0;">
 		<span id="flashClose" class="closeFlashMessage glyphicon glyphicon-remove"></span>
 		<hr/>
 		{{ flash.success | first }}
@@ -18,7 +18,7 @@
 
 {#WARNING#}
 {% if flash.warning is not null %}
-	<div class="alert alert-success minor-margin">
+	<div class="alert alert-success minor-margin" style="margin: 50px 0 20px 0;">
 		<span id="flashClose" class="closeFlashMessage glyphicon glyphicon-remove"></span>
 		<hr/>
 		{{ flash.warning | first }}
@@ -27,7 +27,7 @@
 
 {#ERROR#}
 {% if flash.error is not null %}
-	<div class="alert alert-danger minor-margin">
+	<div class="alert alert-danger minor-margin" style="margin: 50px 0 20px 0;">
 		<span id="flashClose" class="closeFlashMessage glyphicon glyphicon-remove"></span>
 		<hr/>
 		{{ flash.error | first }}
