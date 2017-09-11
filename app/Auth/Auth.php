@@ -1,8 +1,5 @@
 <?php
-
-
 namespace App\Auth;
-
 
 use App\Models\User;
 
@@ -12,12 +9,7 @@ use App\Models\User;
  */
 class Auth
 {
-	
-	/**
-	 * @param $identity
-	 * @param $password
-	 * @return bool
-	 */
+
 	public function attempt($identity, $password)
 	{
 		//CHECK WEATHER THE USERNAME OR EMAIL IS REGISTERED
