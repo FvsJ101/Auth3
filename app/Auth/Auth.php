@@ -1,15 +1,9 @@
 <?php
-
-
 namespace App\Auth;
-
 
 use App\Models\User;
 
-/**
- * Class Auth
- * @package App\Auth
- */
+
 class Auth
 {
 	
